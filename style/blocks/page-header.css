@@ -47,13 +47,22 @@
 	transition-duration: 0.5s;
 }
 
+@media screen and (max-width: 847px) and (min-width: 660px) {
+	.menu {
+		flex-grow: 1;
+	}
+	.menu__group-links {
+		justify-content: center;
+	}
+}
+
 .menu__group-links_burger {
 	opacity: 1 !important;
 	transform: translateY(0%) !important;
 	transition-property: transform, opacity;
 	transition-duration: 0.5s;
 	z-index: 10;
-	background-color: #111;
+	background-color: #191919;
 }
 
 .menu__link {
