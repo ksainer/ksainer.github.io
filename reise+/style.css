@@ -1,0 +1,104 @@
+* {
+	outline: 1px dashed orange;
+	margin: 0;
+	text-decoration: none;
+	color: #000;
+}
+
+* > * > * > * > * > * > * {
+	outline: 1px dashed green;
+}
+
+body {
+	background-color: #dbdbdb;
+	font-family: Cambria, Georgia, serif;
+}
+
+.wrapper {
+	width: 100%;
+	height: 1075px;
+	max-width: 995px;
+	margin: auto;
+}
+
+.main-page {
+	background: url(img/bg-car.jpg) center 220px no-repeat;
+	background-size: contain;
+}
+
+.header {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 8px;
+}
+
+.logo-section {
+	max-width: 344px;
+}
+
+.logo-section__title {
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 20px;
+	padding-top: 5px;
+	transform: scale(1, 1.2);
+}
+
+.contacts {
+	max-width: 270px;
+	padding-right: 5px;
+}
+
+.contacts__call-text {
+	font-size: 24px;
+	text-transform: uppercase;
+	padding-bottom: 3px;
+}
+
+.contacts__phone {
+	font-size: 30px;
+	letter-spacing: 1.3px;
+}
+
+.contacts__opening-hours {
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 1.3px;
+	padding-top: 7px;
+}
+
+.contacts__location {
+	font-size: 23px;
+	font-weight: bold;
+	line-height: 25px;
+	letter-spacing: -0.5px;
+	padding: 7px 0 20px;
+}
+
+.button {
+	background: url(img/button.png) center no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+	border-radius: 10px;
+	padding: 0;
+}
+
+.button__text {
+	display: block;
+	font-size: 16px;
+	letter-spacing: -0.3px;
+	color: #fff;
+	transform: scale(1, 1.3);
+}
+
+.contacts__button {
+	width: 267px;
+	height: 53px;
+	text-transform: uppercase;
+	margin-right: 10px;
+}
