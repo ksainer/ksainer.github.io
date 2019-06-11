@@ -11,10 +11,10 @@
 <body>
 	<main class="main-page">
 		<div class="wrapper">
-			<header class="main-page__header header">
+			<header class="main-page__header">
 				<section class="logo-section">
-					<img src="img/logo.png" alt="logo" class="logo-section__logo-img">
-					<p class="logo-section__logo-text">
+					<img src="img/logo.png" alt="logo" class="logo-section__img">
+					<p class="logo-section__text">
 						Продажа запчастей и электроники в наличии и под заказ.
 					</p>
 				</section>
@@ -40,49 +40,60 @@
 
 			<section class="middle-section">
 
-				<div class="middle-section__auto-labels">
-					<div class="middle-section__car-item"></div>
-					<div class="middle-section__car-item"></div>
-					<div class="middle-section__car-item"></div>
-					<div class="middle-section__car-item"></div>
-					<div class="middle-section__car-item"></div>
-					<div class="middle-section__car-item"></div>
-					<div class="middle-section__car-item"></div>
-					<div class="middle-section__car-item"></div>
-					<div class="middle-section__car-item"></div>
-					<div class="middle-section__car-item"></div>
-					<div class="middle-section__car-item"></div>
-					<div class="middle-section__car-item"></div>
+				<div class="auto-labels">
+					<div class="auto-labels__car-item"></div>
+					<div class="auto-labels__car-item"></div>
+					<div class="auto-labels__car-item"></div>
+					<div class="auto-labels__car-item"></div>
+					<div class="auto-labels__car-item"></div>
+					<div class="auto-labels__car-item"></div>
+					<div class="auto-labels__car-item"></div>
+					<div class="auto-labels__car-item"></div>
+					<div class="auto-labels__car-item"></div>
+					<div class="auto-labels__car-item"></div>
+					<div class="auto-labels__car-item"></div>
+					<div class="auto-labels__car-item"></div>
 				</div>
 
-				<div class="middle-section__form-cb form-cb">
+				<div class="form-cb">
 					<h3 class="form-cb__title title">Оставьте заявку сейчас!</h3>
 					<form action="#" method="POST">
 						<fieldset class="form-cb__fieldset">
 							<p class="form-cb__text">Введите данные для подбора, Ваш телефон или e-Mail. Через час Мы сообщим Вам стоимость и срок поставки Вашего заказа!</p>
 
-							<textarea name="date-order" class="form-cb__textarea" placeholder='Например: Ступица колеса Hyundai Solaris хэтчбэк 1.6 2011'></textarea>
+							<textarea 
+								name="date-order" 
+								class="form-cb__textarea"
+								placeholder='Например: Ступица колеса Hyundai Solaris хэтчбэк 1.6 2011'></textarea>
 							<p class="form-cb__label">Заказ</p>
 
 							<div class="form-cb__costomer-contacts">
 								<label class="form-cb__label">
-									<input type="tel" class="form-cb__input form-cb__phone" placeholder="+7 (999) 999-99-99" required>
-									<br>Телефон
+									<input 
+										type="tel" 
+										class="form-cb__input form-cb__phone" 
+										placeholder="+7 (999) 999-99-99" 
+										required><br>
+									Телефон
 								</label>
 								<label class="form-cb__label">
-									<input type="email" class="form-cb__input form-cb__email" placeholder="email@address.ru" required>
-									<br>e-Mail
+									<input 
+										type="email" 
+										class="form-cb__input" 
+										placeholder="email@address.ru" 
+										required><br>
+									e-Mail
 								</label>
 							</div>
 
-							<button class="form-cb__button button">
+							<button class="button">
 								<span class="form-cb__btn-text button__text">
 									Оставить заявку прямо сейчас!
 								</span>
 							</button>
 
-							<p class="form-cb-notice">Заполнение заявки Вас ни к чему не обязывает!</p>
-							<p class="form-cb-notice">Вы сможете отзаться в любой момент!</p>
+							<p class="form-cb__notice">Заполнение заявки Вас ни к чему не обязывает!</p>
+							<p class="form-cb__notice">Вы сможете отзаться в любой момент!</p>
 						</fieldset>
 					</form>
 				</div>

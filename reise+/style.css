@@ -27,7 +27,8 @@ body {
 	background: url(img/button.png) center no-repeat;
 	background-size: cover; 
 	border-radius: 10px;
-	padding: 5px;
+	min-height: 53px;
+	padding: 5px 10px;
 	cursor: pointer;
 	border: none;
 }
@@ -59,9 +60,6 @@ body {
 }
 
 /*=========== main-page ===========*/
-.main-page {
-	/*background: url(img/bg-car.jpg) center 220px no-repeat, url(img/bg-line.png) 0 220px repeat-x;*/
-}
 .main-page__title::before {
 	content: '';
 	display: block;
@@ -89,7 +87,6 @@ body {
 	margin: 55px 5px 90px;
 	font-size: 43px;
 }
-
 /*=========== main-page > header > logo-section ===========*/
 .logo-section {
 	text-align: center;
@@ -98,11 +95,11 @@ body {
 	margin-right: 10px;
 	margin-bottom: 30px;
 }
-.logo-section__logo-img {
+.logo-section__img {
 	width: 100%;
 	max-height: 165px;
 }
-.logo-section__logo-text {
+.logo-section__text {
 	box-sizing: border-box;
 	font-size: 20px;
 	font-weight: bold;
@@ -145,7 +142,6 @@ body {
 .contacts__button {
 	width: 100%;
 	max-width: 267px;
-	padding: 16px 7px;
 	text-transform: uppercase;
 }
 /*=========== main-page > middle-section ===========*/
@@ -155,71 +151,65 @@ body {
 	justify-content: center;
 	margin-bottom: 20px;
 }
-
-.middle-section__auto-labels {
+/*=========== main-page > middle-section > auto-labels ===========*/
+.auto-labels {
 	display: flex;
 	flex-wrap: wrap;
-	flex-direction: row;
 	justify-content: space-around;
-	align-items: flex-end;
 	align-content: flex-end;
 	max-width: 540px;
 	width: 100%;
 }
 
-.middle-section__car-item {
-	margin: 5px;
-	margin-top: 35px;
+.auto-labels__car-item {
+	margin: 40px 10px 0;
 	filter: drop-shadow(5px 5px 5px black);
 	background: url('img/marks.png') 0 0 no-repeat;
-	background-size: auto;
-	max-width: 187px;
-	max-height: 86px;
 	width: 187px;
 	height: 86px;
 }
 
-.middle-section__car-item:nth-of-type(2) {
+.auto-labels__car-item:nth-of-type(2) {
 	background-position: 0 -86px;
 	width: 89px;
 }
-.middle-section__car-item:nth-of-type(3) {
+.auto-labels__car-item:nth-of-type(3) {
 	background-position: 0 calc(-86px * 2);
 	width: 85px;
 }
-.middle-section__car-item:nth-of-type(4) {
+.auto-labels__car-item:nth-of-type(4) {
 	background-position: 0 calc(-86px * 3);
 	width: 86px;
 }
-.middle-section__car-item:nth-of-type(5) {
+.auto-labels__car-item:nth-of-type(5) {
 	background-position: 0 calc(-86px * 4);
 	width: 89px;
 }
-.middle-section__car-item:nth-of-type(6) {
+.auto-labels__car-item:nth-of-type(6) {
 	background-position: 0 calc(-86px * 5);
 	width: 88px;
 }
-.middle-section__car-item:nth-of-type(7) {
+.auto-labels__car-item:nth-of-type(7) {
 	background-position: 0 calc(-86px * 6);
 	width: 108px;
 }
-.middle-section__car-item:nth-of-type(8) {
+.auto-labels__car-item:nth-of-type(8) {
 	background-position: 0 calc(-86px * 7);
 	width: 94px;
 }
-.middle-section__car-item:nth-of-type(9) {
+.auto-labels__car-item:nth-of-type(9) {
 	background-position: 0 calc(-86px * 8);
 	width: 114px;
 }
-.middle-section__car-item:nth-of-type(10) {
+.auto-labels__car-item:nth-of-type(10) {
 	background-position: 0 calc(-86px * 9);
 	width: 106px;
 }
-.middle-section__car-item:nth-of-type(11) {
+.auto-labels__car-item:nth-of-type(11) {
 	background-position: 0 calc(-86px * 10);
 	width: 116px;
 }
-.middle-section__car-item:nth-of-type(12) {
+.auto-labels__car-item:nth-of-type(12) {
 	background-position: 0 calc(-86px * 11);
 	width: 115px;
 }
@@ -227,7 +217,7 @@ body {
 .form-cb {
 	text-align: center;
 	max-width: 455px;
-	min-width: 280px;
+	width: 100%;
 }
 
 .form-cb__title {
@@ -277,11 +267,7 @@ body {
 
 .form-cb__input {
 	max-width: 205px;
-}
-
-.form-cb__button {
-	min-height: 53px;
-	padding: 5px 10px;
+	width: 100%;
 }
 
 .form-cb__btn-text {
@@ -289,20 +275,16 @@ body {
 	margin: 0 10px;
 }
 
-.form-cb-notice {
+.form-cb__notice {
 	font-size: 14px;
 }
 /*=========== media ===========*/
 @media screen and (max-width: 550px) {
-	/*.main-page {
-		background-size: 250%;
-		background-position: center 450px;
-	}*/
-	.header {
+	.main-page__header {
 		flex-wrap: wrap;
 		justify-content: center;
 	}
-	.header__logo-section {
+	.logo-section {
 		margin-right: 0;
 	}
 	.main-page__title {
