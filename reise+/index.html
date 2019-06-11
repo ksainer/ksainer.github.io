@@ -4,63 +4,99 @@
 	<meta charset="UTF-8">
 	<meta name="keywords" content="запчасти автомобили audi bmw volvo skoda mazda nissan toyota kia hyndai">
 	<meta name="description" content="Продажа запчастей и электроники в наличии и под заказ">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Reise+</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<section class="main-page">
+	<main class="main-page">
 		<div class="wrapper">
-			<header class="header">
-				<section class="header__logo-section">
-					<img src="img/logo.png" alt="logo" class="header__logo-img">
-					<p class="header__logo-text">Продажа запчастей и электроники в наличии и под заказ.</p>
+			<header class="main-page__header header">
+				<section class="logo-section">
+					<img src="img/logo.png" alt="logo" class="logo-section__logo-img">
+					<p class="logo-section__logo-text">
+						Продажа запчастей и электроники в наличии и под заказ.
+					</p>
 				</section>
+
 				<section class="contacts">
 					<p class="contacts__call-text">Звоните:</p>
 					<a href="tel:+78202629122" class="contacts__phone">+7(8202)62-91-22</a>
 					<p class="contacts__opening-hours">Работаем с 9:00 до 19:00</p>
-					<p class="contacts__location">Мы находимся на<br>ул. Краснодонцев, 1</p>
-					<button class="contacts__button button"><span class="button__text">Позвоните нам бесплатно</span></button>
+					<p class="contacts__location">Мы находимся на:</p>
+					<p class="contacts__location">ул. Краснодонцев, 1</p>
+
+					<button class="contacts__button button">
+						<span class="button__text">
+							Позвоните нам бесплатно
+						</span>
+					</button>
 				</section>
 			</header>
-			<h1 class="main-page__title title">Запчасти и электроника на любые автомобили</h1>
+
+			<h1 class="main-page__title title">
+				Запчасти и электроника на любые автомобили
+			</h1>
+
 			<section class="middle-section">
-				<div class="middle-section__marks">
-					<img src="img/marks/audi.png" alt="audi" class="middle-section__img-mark">
-					<img src="img/marks/BMW.png" alt="BMW" class="middle-section__img-mark">
-					<img src="img/marks/WV.png" alt="Volkswagen" class="middle-section__img-mark">
-					<img src="img/marks/skoda.png" alt="skoda" class="middle-section__img-mark">
-					<img src="img/marks/mazda.png" alt="mazda" class="middle-section__img-mark">
-					<img src="img/marks/nissan.png" alt="nissan" class="middle-section__img-mark">
-					<img src="img/marks/Toyota.png" alt="toyota" class="middle-section__img-mark">
-					<img src="img/marks/Volvo.png" alt="volvo" class="middle-section__img-mark">
-					<img src="img/marks/KIA.png" alt="kia" class="middle-section__img-mark">
-					<img src="img/marks/deu.png" alt="deu" class="middle-section__img-mark">
-					<img src="img/marks/shevrolet.png" alt="shevrolet" class="middle-section__img-mark">
-					<img src="img/marks/hyundai.png" alt="hyundai" class="middle-section__img-mark">
+
+				<div class="middle-section__auto-labels">
+					<div class="middle-section__car-item"></div>
+					<div class="middle-section__car-item"></div>
+					<div class="middle-section__car-item"></div>
+					<div class="middle-section__car-item"></div>
+					<div class="middle-section__car-item"></div>
+					<div class="middle-section__car-item"></div>
+					<div class="middle-section__car-item"></div>
+					<div class="middle-section__car-item"></div>
+					<div class="middle-section__car-item"></div>
+					<div class="middle-section__car-item"></div>
+					<div class="middle-section__car-item"></div>
+					<div class="middle-section__car-item"></div>
 				</div>
-				<div class="middle-section__form-callback">
-					<h3 class="form-callback__title title">Оставьте заявку сейчас!</h3>
+
+				<div class="middle-section__form-cb form-cb">
+					<h3 class="form-cb__title title">Оставьте заявку сейчас!</h3>
 					<form action="#" method="POST">
-						<fieldset class="form-callback__fieldset">
-							<p class="form-callback__text">Введите данные для подбора, Ваш телефон или e-Mail.<br>Через час Мы сообщим Вам стоимость<br> и срок поставки Вашего заказа!</p>
-							<textarea name="date-order" cols="30" rows="10" class="form-callback__textarea"></textarea>
-							<p class="form-callback__label">Заказ</p>
-							<div class="form-callback__costomer-contacts">
-								<label class="form-callback__label"><input type="tel" class="form-callback__costomer-phone"><br>Телефон</label>
-								<label class="form-callback__label">
-								<input type="email" class="form-callback__costomer-email"><br>e-Mail</label>
+						<fieldset class="form-cb__fieldset">
+							<p class="form-cb__text">Введите данные для подбора, Ваш телефон или e-Mail. Через час Мы сообщим Вам стоимость и срок поставки Вашего заказа!</p>
+
+							<textarea name="date-order" class="form-cb__textarea" placeholder='Например: Ступица колеса Hyundai Solaris хэтчбэк 1.6 2011'></textarea>
+							<p class="form-cb__label">Заказ</p>
+
+							<div class="form-cb__costomer-contacts">
+								<label class="form-cb__label">
+									<input type="tel" class="form-cb__input form-cb__phone" placeholder="+7 (999) 999-99-99" required>
+									<br>Телефон
+								</label>
+								<label class="form-cb__label">
+									<input type="email" class="form-cb__input form-cb__email" placeholder="name@e-mail.ru" required>
+									<br>e-Mail
+								</label>
 							</div>
-							<button class="form-callback__button button"><span class="form-callback__button-text button__text">Оставить заявку прямо сейчас!</span></button>
-							<p class="form-callback-notice">Заполнение заявки Вас ни к чему не обязывает!<br>Вы сможете отзаться в любой момент!</p>
+
+							<button class="form-cb__button button">
+								<span class="form-cb__btn-text button__text">
+									Оставить заявку прямо сейчас!
+								</span>
+							</button>
+
+							<p class="form-cb-notice">Заполнение заявки Вас ни к чему не обязывает!</p>
+							<p class="form-cb-notice">Вы сможете отзаться в любой момент!</p>
 						</fieldset>
 					</form>
 				</div>
+
 			</section>
+
 		</div>
-	</section>
-	<div class="separate-line"></div>
+	</main>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/jquery.mask.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('.form-cb__phone').mask('+7 (000) 000-00-00');
+	});
+</script>
 </body>
 </html>

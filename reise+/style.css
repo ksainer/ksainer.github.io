@@ -3,6 +3,7 @@
 	margin: 0;
 	text-decoration: none;
 	color: #000;
+	word-wrap: break-word;
 }
 
 *:focus {
@@ -15,116 +16,39 @@ body {
 }
 
 .wrapper {
+	box-sizing: border-box;
 	width: 100%;
-	max-width: 995px;
+	max-width: 1035px;
 	margin: auto;
-}
-
-.main-page {
 	padding: 8px 20px;
-	background: url(img/bg-car.jpg) center 220px no-repeat;
-	background-size: contain;
-}
-
-.header {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: space-between;
-}
-
-.header__logo-section {
-	min-width: 200px;
-	max-width: 340px;
-	margin-right: 10px;
-	margin-bottom: 30px;
-}
-
-.header__logo-img {
-	width: 100%;
-}
-
-.header__logo-text {
-	font-size: 20px;
-	font-weight: bold;
-	text-align: center;
-	line-height: 20px;
-	padding-top: 5px;
-	transform: scale(1, 1.2);
-}
-
-.contacts {
-	max-width: 270px;
-	padding-right: 5px;
-}
-
-.contacts__call-text {
-	font-size: 24px;
-	text-transform: uppercase;
-	padding-bottom: 3px;
-}
-
-.contacts__phone {
-	font-size: 30px;
-	letter-spacing: 1.3px;
-}
-
-.contacts__opening-hours {
-	font-size: 18px;
-	text-transform: uppercase;
-	letter-spacing: 1.3px;
-	padding-top: 7px;
-}
-
-.contacts__location {
-	font-size: 23px;
-	font-weight: bold;
-	line-height: 25px;
-	letter-spacing: -0.5px;
-	padding: 7px 0 20px;
 }
 
 .button {
 	background: url(img/button.png) center no-repeat;
 	background-size: cover; 
-    font-weight: bold;
-    font-size: 14px;
 	border-radius: 10px;
-	padding: 0;
+	padding: 5px;
 	cursor: pointer;
 	border: none;
 }
-
 .button:hover {
 	transition: 0.3s;
 	filter: hue-rotate(25deg);
 }
-
 .button:active {
 	transition: 0s;
 	box-shadow: inset 5px 5px 5px rgba(100,100,100,0.7),
 				inset -5px -5px 5px rgba(100,100,100,0.7);
 }
-
 .button__text {
+	word-wrap: break-word;
 	font-family: Cambria, Georgia, serif;
-	position: relative;
-	display: block;
 	font-size: 17px;
 	font-weight: bold;
 	letter-spacing: -0.3px;
 	line-height: 19px;
 	color: #fff;
-	transform: scale(1, 1.2);
 	text-shadow: 2px 0 #000, -2px 0 #000, 0 1px 1px #000, 0 -1px 1px #000;
-}
-
-.contacts__button {
-	width: 267px;
-	height: 53px;
-	text-transform: uppercase;
 }
 
 .title {
@@ -132,14 +56,98 @@ body {
 	text-align: center;
 	text-shadow: 3px 0 2px #fff, -3px 0 2px #fff, 0 2px 2px #fff, 0 -2px 2px #fff;
 	color: #E31E27;
-	transform: scale(1, 1.3);
 }
 
+/*=========== main-page ===========*/
+.main-page {
+	/*background: url(img/bg-car.jpg) center 220px no-repeat, url(img/bg-line.png) 0 220px repeat-x;*/
+}
+.main-page__title::before {
+	content: '';
+	display: block;
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	width: 100%;
+	height: 440px;
+	background: url(img/bg-car.jpg) center no-repeat, url(img/bg-line.png) repeat-x;
+}
+.main-page::after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 82px;
+	opacity: 0.4;
+	background: url(img/separate-line.png) repeat-x;
+}
+.main-page__header {
+	display: flex;
+	justify-content: space-between;
+}
 .main-page__title {
-	margin: 55px 10px 90px;
-	font-size: 42px;
+	margin: 55px 5px 90px;
+	font-size: 43px;
 }
 
+/*=========== main-page > header > logo-section ===========*/
+.logo-section {
+	text-align: center;
+	min-width: 220px;
+	max-width: 340px;
+	margin-right: 10px;
+	margin-bottom: 30px;
+}
+.logo-section__logo-img {
+	width: 100%;
+	max-height: 165px;
+}
+.logo-section__logo-text {
+	box-sizing: border-box;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 20px;
+	padding-top: 5px;
+}
+/*=========== main-page > header > contacts ===========*/
+.contacts {
+	max-width: 270px;
+	width: 100%;
+}
+.contacts__call-text {
+	font-size: 24px;
+	text-transform: uppercase;
+	padding-bottom: 3px;
+}
+.contacts__phone {
+	display: block;
+	word-wrap: break-word;
+	font-size: 30px;
+	letter-spacing: 1.3px;
+}
+.contacts__opening-hours {
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 1.3px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+.contacts__location {
+	font-size: 23px;
+	font-weight: bold;
+	line-height: 25px;
+	letter-spacing: -0.5px;
+}
+.contacts__location:last-of-type {
+	padding-bottom: 20px;
+}
+.contacts__button {
+	width: 100%;
+	max-width: 267px;
+	padding: 16px 7px;
+	text-transform: uppercase;
+}
+/*=========== main-page > middle-section ===========*/
 .middle-section {
 	display: flex;
 	flex-wrap: wrap-reverse;
@@ -147,7 +155,7 @@ body {
 	margin-bottom: 20px;
 }
 
-.middle-section__marks {
+.middle-section__auto-labels {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -155,125 +163,157 @@ body {
 	align-items: flex-end;
 	align-content: flex-end;
 	max-width: 540px;
+	width: 100%;
 }
 
-.middle-section__img-mark {
+.middle-section__car-item {
 	margin: 5px;
-	margin-top: 30px;
+	margin-top: 35px;
 	filter: drop-shadow(5px 5px 5px black);
+	background: url('img/marks.png') 0 0 no-repeat;
+	background-size: auto;
+	max-width: 187px;
+	max-height: 86px;
+	width: 187px;
+	height: 86px;
 }
 
-.middle-section__form-callback {
+.middle-section__car-item:nth-of-type(2) {
+	background-position: 0 -86px;
+	width: 89px;
+}
+.middle-section__car-item:nth-of-type(3) {
+	background-position: 0 calc(-86px * 2);
+	width: 85px;
+}
+.middle-section__car-item:nth-of-type(4) {
+	background-position: 0 calc(-86px * 3);
+	width: 86px;
+}
+.middle-section__car-item:nth-of-type(5) {
+	background-position: 0 calc(-86px * 4);
+	width: 89px;
+}
+.middle-section__car-item:nth-of-type(6) {
+	background-position: 0 calc(-86px * 5);
+	width: 88px;
+}
+.middle-section__car-item:nth-of-type(7) {
+	background-position: 0 calc(-86px * 6);
+	width: 108px;
+}
+.middle-section__car-item:nth-of-type(8) {
+	background-position: 0 calc(-86px * 7);
+	width: 94px;
+}
+.middle-section__car-item:nth-of-type(9) {
+	background-position: 0 calc(-86px * 8);
+	width: 114px;
+}
+.middle-section__car-item:nth-of-type(10) {
+	background-position: 0 calc(-86px * 9);
+	width: 106px;
+}
+.middle-section__car-item:nth-of-type(11) {
+	background-position: 0 calc(-86px * 10);
+	width: 116px;
+}
+.middle-section__car-item:nth-of-type(12) {
+	background-position: 0 calc(-86px * 11);
+	width: 115px;
+}
+/*=========== main-page > middle-section > form-cb ===========*/
+.form-cb {
 	text-align: center;
 	max-width: 455px;
 	min-width: 280px;
 }
 
-.form-callback__title {
-	font-size: 33px;
-	margin-bottom: 8px;
+.form-cb__title {
+	font-size: 34px;
+	margin-bottom: 6px;
 }
 
-.form-callback__fieldset {
+.form-cb__fieldset {
 	border: 3px solid rgba(230,77,82, 0.7);
 	background-color: rgba(244,244,244,0.7);
-	padding: 10px;
+	padding: 5px 10px;
 }
 
-.form-callback__text {
-	margin-top: 3px;
+.form-cb__text {
 	margin-bottom: 30px;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: bold;
-	transform: scale(1,1.2);
-	line-height: 15px;
+	line-height: 18px;
 }
 
-.middle-section__form-callback input,
-.middle-section__form-callback textarea {
+.form-cb__input,
+.form-cb__textarea {
 	border: 3px solid #a9a9a9;
 	padding: 7px;
 	font-size: 18px;
 	box-sizing: border-box;
 }
 
-.form-callback__textarea {
+.form-cb__textarea {
 	width: 100%;
 	height: 125px;
 }
 
-.form-callback__costomer-contacts {
+.form-cb__costomer-contacts {
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	flex-wrap: wrap;
-	margin-top: 30px;
+	margin-top: 30px ;
 	margin-bottom: 37px;
 }
 
-.form-callback__label {
-	text-align: center;
+.form-cb__label {
 	font-size: 20px;
 	font-weight: bold;
-	margin-right: 10px;
 	margin-bottom: 10px;
 }
 
-.form-callback__label:last-of-type {
-	margin-right: 0;
-}
-
-.form-callback__costomer-phone {
+.form-cb__input {
 	max-width: 205px;
 }
 
-.form-callback__costomer-email {
-	max-width: 205px;
+.form-cb__button {
+	min-height: 53px;
+	padding: 5px 10px;
 }
 
-.form-callback__button {
-	padding: 0 20px;
-	height: 52px;
-}
-
-.form-callback__button-text {
+.form-cb__btn-text {
 	font-size: 20px;
-	transform: scale(1, 1);
+	margin: 0 10px;
 }
 
-.form-callback-notice {
-	margin-top: 3px;
+.form-cb-notice {
 	font-size: 14px;
 }
-
-.separate-line {
-	width: 100%;
-	height: 82px;
-	opacity: 0.4;
-	background: url(img/separate-line.png) repeat-x;
-}
-
+/*=========== media ===========*/
 @media screen and (max-width: 550px) {
-	.main-page {
+	/*.main-page {
 		background-size: 250%;
 		background-position: center 450px;
-	}
+	}*/
 	.header {
 		flex-wrap: wrap;
 		justify-content: center;
 	}
-	.main-page__title {
-		font-size: 35px;
+	.header__logo-section {
+		margin-right: 0;
 	}
-	.form-callback__title {
-		font-size: 28px;
+	.main-page__title {
+		font-size: 37px;
 	}
 }
 
 @media screen and (max-width: 490px) {
 	.main-page__title {
-		font-size: 24px;
+		font-size: 34px;
 	}
-	.form-callback__title {
-		font-size: 22px;
+	.form-cb__title {
+		font-size: 24px;
 	}
 }
