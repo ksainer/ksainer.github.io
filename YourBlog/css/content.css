@@ -1,0 +1,123 @@
+.content {
+   display: flex;
+   margin-top: 20px;
+}
+
+.post {
+   position: relative;
+   margin-bottom: 35px;
+}
+
+.post::before {
+   content: '18';
+   position: absolute;
+   top: 10px;
+   left: -80px;
+   width: 68px;
+   height: 46px;
+   background-color: #f78f1d;
+   font-size: 36px;
+   font-weight: bold;
+   color: #fff;
+   line-height: 46px;
+   text-align: center;
+}
+.post:first-child::before {
+   content: '20';
+}
+
+.post__title {
+   position: relative;
+   font-size: 38px;
+   font-weight: bold;
+}
+.post__title::before {
+   content: 'jun';
+   position: absolute;
+   top: 56px;
+   left: -74px;
+   width: 62px;
+   height: 27px;
+   background-color: #00aedb;
+   text-transform: uppercase;
+   font-size: 20px;
+   font-weight: bold;
+   color: #fff;
+   text-align: center;
+}
+
+.post__text {
+   font-size: 16px;
+   margin: 5px 0 15px;
+}
+
+.post__footer {
+   position: relative;
+   width: 100%;
+   font-size: 17px;
+   color: #6a6666;
+   padding: 10px;
+   padding-right: 120px;
+}
+
+.post__link {
+   white-space: nowrap;
+   text-decoration: none;
+   color: inherit;
+}
+
+.post__category {
+   margin-right: 20px;
+}
+
+.post__comments {
+   position: relative;
+   margin-left: 30px;
+}
+
+.post__comments:before {
+   position: absolute;
+   top: 3px;
+   left: -30px;
+   content: '';
+   width: 17px;
+   height: 17px;
+   background: url('../img/social.png') left bottom no-repeat;
+}
+
+.post__read-more {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+}
+
+.slider {
+   padding: 12px;
+   border: 1px solid rgba(0, 0, 0, .25);
+}
+
+.slider__corrent-img {
+   width: 100%;
+}
+
+.slider__item {
+   display: inline-block;
+   font-size: 0;
+   line-height: 0;
+   border: 1px solid rgba(0, 0, 0, .25);
+   padding: 3px;
+   margin-top: 10px;
+   margin-right: 10px;
+}
+
+.slider__wrap-img {
+   overflow: hidden;
+   height: 100%;
+}
+
+
+.slider__small-img {
+   height: 100%;
+   position: relative;
+   left: 10px;
+}

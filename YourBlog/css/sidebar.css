@@ -1,0 +1,238 @@
+.sidebar {
+   max-width: 330px;
+   min-width: 330px;
+   margin-left: 20px;
+   overflow: hidden;
+}
+
+.aside__title {
+   height: 36px;
+   width: 100%;
+   padding: 0 15px;
+   line-height: 36px;
+   background-color: #5261ac;
+   text-transform: uppercase;
+   font-size: 18px;
+   font-weight: bold;
+   color: #fff;
+
+}
+
+.last-stories__title {
+   display: inline-block;
+   position: relative;
+   z-index: 2;
+   max-width: 292px;
+   width: auto;
+   margin-bottom: 4px;
+   white-space: nowrap;
+   font-size: 19px;
+}
+
+.last-stories__title::after {
+   content: '';
+   position: absolute;
+   right: -36px;
+   z-index: -1;
+   border: 36px solid transparent;
+   border-top: none;
+   border-bottom-color: #5261ac;
+}
+
+.last-stories__menu {
+   display: flex;
+   list-style: none;
+   height: 36px;
+   line-height: 36px;
+   text-align: center;
+   text-transform: uppercase;
+}
+
+.last-stories__category {
+   position: relative;
+   z-index: 1;
+   width: 33.33%;
+   min-width: 10px;
+   padding: 0 10px;
+   cursor: pointer;
+   background-color: #f78f1d;
+   text-transform: uppercase;
+   font-size: 19px;
+   font-weight: bold;
+   color: #fff;
+   transition: flex-shrink 0.2s;
+   transition: width 0.3s;
+   white-space: nowrap;
+}
+
+.last-stories__category:first-child {
+   background-color: #ec098d;
+}
+.last-stories__category:last-child {
+   background-color: #00aedb;
+}
+
+.last-stories__category:hover {
+   flex-shrink: 0;
+   width: 50%;
+}
+
+.active-category::after {
+   content: '';
+   position: absolute;
+   bottom: 0px;
+   left: calc(50% - 6px);
+   z-index: -1;
+   width: 12px;
+   height: 12px;
+   background-color: inherit;
+   transform: rotate(45deg);
+   transform-origin: bottom left;
+}
+
+.last-stories__story {
+   display: flex;
+   align-content: flex-start;
+   padding: 15px 0;
+   border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+.last-stories__story:last-child {
+   border: none;
+}
+
+.last-stories__img {
+   box-sizing: initial;
+   padding: 3px;
+   width: 75px;
+   border: 1px solid rgba(0, 0, 0, .3);
+}
+
+.last-stories__right-block {
+   margin-left: 10px;
+   margin-right: 5px;
+}
+
+.last-stories__story-title {
+   margin-bottom: 7px;
+   font-size: 15px;
+   line-height: 20px;
+   color: #00aedb;
+}
+
+.last-stories__text {
+   font-size: 13px;
+   line-height: 16px;
+}
+
+.bottom-line {
+   display: flex;
+   justify-content: space-between;
+   position: relative;
+   margin-top: 5px;
+   font-size: 11px;
+   font-weight: lighter;
+   text-align: right;
+}
+
+.bottom-line__count-comments {
+   margin-left: 20px;
+   text-align: left;
+}
+.bottom-line__count-comments::before {
+   content: '';
+   position: absolute;
+   left: 0;
+   width: 15px;
+   height: 15px;
+   background: url('../img/comments.svg') no-repeat;
+   background-size: contain;
+}
+
+.forYou__title {
+   margin: 15px 0 10px;
+}
+
+.forYou__item {
+   display: flex;
+   align-items: flex-start;
+   margin: 15px 0 ;
+}
+
+.forYou__img {
+   padding: 3px;
+   width: 75px;
+   border: 1px solid rgba(0, 0, 0, .3);
+}
+.forYou__right-block {
+   margin-left: 10px;
+   margin-right: 5px;
+}
+
+.forYou__text {
+   font-size: 14px;
+   margin: 5px 0;
+}
+
+.forYou__link {
+   font-size: 14px;
+   color: #00aedb;
+}
+.archives__title {
+   margin: 20px 0 10px;
+}
+
+.archives__item {
+   margin-left: 25px;
+   padding: 10px 0 5px;
+   border-bottom: 1px solid rgba(0, 0, 0, .3);  
+}
+.archives__item:last-child {
+   border-bottom: none;
+}
+.archives__item:hover .archives__link::before {
+   border-width: 6px;
+   left: -18px;
+   transition: left .3s;
+}
+
+.archives__link {
+   position: relative;
+   text-decoration: none;
+   font-size: 14px;
+   color: inherit;
+}
+.archives__link:hover {
+   text-decoration: underline;
+}
+.archives__link::before {
+   position: absolute;
+   top: 5px;
+   left: -23px;
+   content: '';
+   border: 5px solid #5261ac;
+   border-bottom-color: transparent;
+   border-left-color: transparent;
+   transform: rotate(45deg);
+   transition: left .3s;
+}
+
+.tag-cloud__title {
+   margin-top: 20px;
+   margin-bottom: 15px;
+}
+
+.tag-cloud__block {
+   margin-left: 10px;
+}
+
+.tag-cloud__item {
+   letter-spacing: 0px;
+   line-height: 28px;
+   font-size: 18px;
+   color: #5261ac;
+   cursor: pointer;
+}
+
+.tag-cloud__item:hover {
+   text-decoration: underline;
+}

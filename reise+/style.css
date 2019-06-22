@@ -33,7 +33,7 @@ body {
 	border: none;
 }
 .button:hover {
-	transition: 0.3s;
+	transition: .3s;
 	filter: hue-rotate(25deg);
 }
 .button:active {
