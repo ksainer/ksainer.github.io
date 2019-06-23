@@ -49,7 +49,7 @@ calculateGeometryImg(slider, true);
 
 window.onresize = function () {
 	resizeHeight(topStoriesLinks);
-	 calculateGeometryImg(slider, false);
+	calculateGeometryImg(slider, false);
 }
 
 // create tag cloud 
