@@ -98,7 +98,6 @@
 .main-menu__item:nth-child(6) {
    background-color: #ff0000;   
 }
-
 .main-menu__item:last-child {
    background-color: #898989; 
 }
@@ -114,12 +113,6 @@
    font-weight: bold;
    color: #fff;
    white-space: nowrap;
-   transition: background-color .2s, color .2s;
-}
-
-.main-menu__link:hover {
-   background-color: #fff;
-   color: #000;
 }
 
 @media screen and (max-width: 735px) {

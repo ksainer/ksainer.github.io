@@ -25,3 +25,25 @@ body {
    background-color: rgba(255, 255, 255, .8);
    padding: 25px;
 }
+
+.hover-shift {
+   position: relative;
+   z-index: 1;
+   overflow: hidden;
+}
+.hover-shift::after {
+   position: absolute;
+   content: '';
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: -100%;
+   z-index: -1;
+   background-color: inherit;
+   filter: invert(1) brightness(.8);
+   transition: left .3s;
+}
+
+.hover-shift:hover::after {
+   left: 0;
+}
