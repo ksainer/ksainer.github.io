@@ -29,7 +29,7 @@
 
 .search-form__input {
    width: 100%;
-   /* min-width: 200px; */
+   min-width: 200px;
    height: 36px;
    padding-left: 10px;
    border: 1px solid rgba(0, 0, 0, 0.1);

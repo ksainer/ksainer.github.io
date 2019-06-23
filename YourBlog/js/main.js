@@ -8,6 +8,21 @@ $(window).scroll(function () {
 // resizing img from slider
 let slider = document.body.querySelectorAll('.slider__images');
 let listImg = document.querySelectorAll('.slider__small-img');
+let topStoriesImgs = document.querySelectorAll('.top-stories__link');
+
+function resizeHeight(arrElems) {
+	let minH = 190;
+	arrElems.forEach((item) => {
+		if (item.firstElementChild.clientHeight < minH) minH = item.firstElementChild.clientHeight;
+		console.log(item.firstElementChild.clientHeight);
+	})
+	arrElems.forEach((item) => {
+		item.style.height = minH + 'px';
+	})
+}
+
+resizeHeight(topStoriesImgs);
+
 
 // if several sliders on the page
 for (let i = 0; i < slider.length; i++) {
@@ -30,6 +45,7 @@ listImg.forEach((item) => {
 })
 
 window.onresize = function () {
+	resizeHeight(topStoriesImgs);
 	// resize small imgs
 	for (let i = 0; i < slider.length; i++) {
 		let currentSlider = slider[i];
