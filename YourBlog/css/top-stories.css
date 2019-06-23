@@ -42,12 +42,14 @@
 }
 
 .top-stories__link {
+   position: relative;
    display: block;
    overflow: hidden;
    width: 100%;
 }
 
 .top-stories__img {
+   position: absolute;
    width: 100%;
 }
 
@@ -66,8 +68,8 @@
    background-color: #00aedb;
    padding: 8px 30px;
    overflow: hidden;
-   transition: .5s;
-   transform-origin: right;
+   /* transition: .5s;
+   transform-origin: right; */
 }
 .top-stories__topic:hover {
    background-color: #007796;

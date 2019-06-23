@@ -100,24 +100,26 @@
    width: 100%;
 }
 
+.slider__images {
+   display: flex;
+   flex-wrap: wrap;
+}
+
 .slider__item {
-   display: inline-block;
-   font-size: 0;
-   line-height: 0;
    border: 1px solid rgba(0, 0, 0, .25);
    padding: 3px;
    margin-top: 10px;
-   margin-right: 10px;
+   margin-right: 5px;
 }
 
 .slider__wrap-img {
+   position: relative;
    overflow: hidden;
    height: 100%;
 }
 
 
 .slider__small-img {
+   position: absolute;
    height: 100%;
-   position: relative;
-   left: 10px;
 }
