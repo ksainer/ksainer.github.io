@@ -236,3 +236,9 @@
 .tag-cloud__item:hover {
    text-decoration: underline;
 }
+
+@media screen and (max-width: 1023px) {
+   .sidebar {
+      display: none;
+   }
+}
