@@ -2,14 +2,17 @@
 @import url('bg-lines.css');
 @import url('header.css');
 @import url('top-stories.css');
-@import url('main.css');
+/* @import url('main.css'); */
 @import url('sidebar.css');
 
 *, *::before, *::after {
-   /* outline: 1px dashed red; */
+   /* outline: 2px dashed red; */
    box-sizing: border-box;
    margin: 0;
    padding: 0;
+}
+*:focus {
+   outline: 5px dashed orange;
 }
 
 body {
@@ -26,12 +29,12 @@ body {
    padding: 25px;
 }
 
-.hover-shift {
+.animate__hover-shift {
    position: relative;
    z-index: 1;
    overflow: hidden;
 }
-.hover-shift::after {
+.animate__hover-shift::after {
    position: absolute;
    content: '';
    width: 100%;
@@ -40,10 +43,9 @@ body {
    left: -100%;
    z-index: -1;
    background-color: inherit;
-   filter: invert(1) brightness(.8);
+   filter: invert(1);
    transition: left .3s;
 }
-
-.hover-shift:hover::after {
+.animate__hover-shift:hover::after {
    left: 0;
 }

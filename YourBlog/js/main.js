@@ -1,3 +1,22 @@
+// top-stories slider
+let sliderItems = document.body.querySelectorAll('.top-stories__item');
+let correntPos = 0;
+
+function strafeSlider(direction) {
+	
+	if (direction) {
+		sliderItems[correntPos].classList.add('item-hidden');
+		sliderItems[correntPos + 3].classList.remove('item-hidden');
+		correntPos++;
+	} else {
+		sliderItems[correntPos + 2].classList.add('item-hidden');
+		sliderItems[correntPos - 1].classList.remove('item-hidden');
+		correntPos--;
+	}
+}
+
+// =================================
+
 document.addEventListener("DOMContentLoaded", function() {
 	
 	// background lines resizing
@@ -7,24 +26,34 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 	// ===========================
 	
+	
+	
+
+	// resizing imgs from top-stories
+	// let topStoriesLinks = document.querySelectorAll('.top-stories__wrap-img');
+
+	// function resizeHeight(arrElems) {
+	// 	let minHeight = 190; // max-height: 190px;
+	// 	arrElems.forEach((item) => { // search min height form imgs
+	// 		let imgH = item.firstElementChild.clientHeight;
+	// 		if (imgH && imgH < minHeight) minHeight = imgH;
+	// 	})
+	// 	arrElems.forEach((item) => {
+	// 		item.style.height = minHeight + 'px';
+	// 	})
+	// }
+	// resizeHeight(topStoriesLinks);
+	// ==================================
+
+	
+
+
+
+
+	// resizing imgs from content sliders
 	let sliders = document.body.querySelectorAll('.slider__images');
 	let listImg = document.querySelectorAll('.slider__small-img');
-	let topStoriesLinks = document.querySelectorAll('.top-stories__link');
 
-	// resizing img from top-stories imgs
-	function resizeHeight(arrElems) {
-		let minHeight = 190; // max-height: 190px;
-		arrElems.forEach((item) => { // search min height form imgs
-			let imgH = item.firstElementChild.clientHeight;
-			if (imgH < minHeight) minHeight = imgH;
-		})
-		arrElems.forEach((item) => {
-			item.style.height = minHeight + 'px';
-		})
-	}
-	resizeHeight(topStoriesLinks);
-
-	// resizing imgs from sliders
 	function calculateGeometryImg(sliderList, start) {
 		// if several sliders on the page
 		for (let i = 0; i < sliderList.length; i++) {
@@ -48,6 +77,13 @@ document.addEventListener("DOMContentLoaded", function() {
 		})
 	}
 	calculateGeometryImg(sliders, true);
+	// =================================
+
+
+
+
+
+
 
 
 	window.onresize = function () {
