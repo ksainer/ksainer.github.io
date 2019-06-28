@@ -159,6 +159,7 @@
 
 .forYou__list {
    background-color: rgba(255, 255, 255, .7);
+   list-style: none;
 }
 
 .forYou__item {
@@ -192,6 +193,7 @@
 
 .archives__list {
    background-color: rgba(255, 255, 255, .7);
+   list-style: none;
 }
 
 .archives__item {
