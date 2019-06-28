@@ -1,4 +1,3 @@
-/* title */
 .top-stories__title {
    text-transform: uppercase;
    font-size: 21px;
@@ -9,61 +8,67 @@
 
 .slider {
    position: relative;
+   overflow: hidden;
+   padding: 0 15px;
 }
-
+/* ======= slider buttons ========== */
 .slider__btn {
    position: absolute;
    z-index: 100;
    top: 0px;
-   width: 30px;
-   height: 190px;
-   background: none;
+   width: 25px;
+   height: 230px;
+   background: rgba(255,255,255,.7);
+   outline: none !important;
    border: none;
    cursor: pointer;
-   transition: background .2s;
+   transition: opacity .2s;
+   opacity: 0;
 }
-.slider__btn:hover {
-   background-color: rgba(255,255,255,.5);
+
+.slider__btn:focus {
+   opacity: 1 !important;
 }
+
+.slider:hover .slider__btn {
+   opacity: .7;
+}
+
+.slider .slider__btn:hover {
+   opacity: 1;
+}
+
 .slider__btn::before {
    position: absolute;
    top: 85px;
    content: '';
    border: 20px solid transparent;
-   opacity: 0;
    transition: opacity .2s;
-}
-
-.slider:hover .slider__btn::before {
-   opacity: .7;
-}
-.slider .slider__btn:hover::before {
-   opacity: 1;
 }
 
 .slider__btn-prev {
    left: 0px;
-   
 }
+
 .slider__btn-prev::before {
    border-right-color: #00aedb;
    border-left: none;
-   left: 5px;
+   left: 0;
 }
 
 .slider__btn-next {
    right: 0px;
 }
 .slider__btn-next::before {
-   border-left-color: #ec098d;
+   border-left-color: #00aedb;
    border-right: none;
-   right: 5px;
+   right: 0;
 }
-
+/* ================================= */
 .slider__list {
    display: flex;
-   overflow: hidden;
    list-style: none;
+   transition: transform .5s;
 }
 
 .slider__item {
@@ -77,11 +82,16 @@
 }
 
 .slider__wrap-img {
-   max-height: 190px;
+   position: relative;
+   height: 190px;
+   width: 315px;
    overflow: hidden;
 }
 
 .slider__img {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
    width: 315px;
 }
 
@@ -99,14 +109,6 @@
    color: white;
 }
 
-.slider__item:nth-child(2) .slider__topic {
-   background-color: #f78f1d;
-}
-
-.slider__item:nth-child(3) .slider__topic {
-   background-color: #ec098d;
-}
-
 .slider__topic::before {
    content: '';
    position: absolute;
@@ -118,17 +120,17 @@
 
 .slider__text {
    margin-top: 10px;
+   padding-right: 3px;
    font-size: 15px;
    font-weight: bold;
 }
 
 
-/* @media screen and (max-width: 990px) {
-   .top-stories__img {
-   }
-}
+/* @media screen and (max-width: 1050px) {
+   
+} */
 
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
    .top-stories__item:last-of-type {
       display: none;
    }

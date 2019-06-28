@@ -1,95 +1,111 @@
 // top-stories slider
-let sliderItems = document.body.querySelectorAll('.top-stories__item');
-let correntPos = 0;
 
-function strafeSlider(direction) {
-	
-	if (direction) {
-		sliderItems[correntPos].classList.add('item-hidden');
-		sliderItems[correntPos + 3].classList.remove('item-hidden');
-		correntPos++;
-	} else {
-		sliderItems[correntPos + 2].classList.add('item-hidden');
-		sliderItems[correntPos - 1].classList.remove('item-hidden');
-		correntPos--;
-	}
+// set color for slider topic
+let sliderTopics = document.body.querySelectorAll('.slider__topic');
+let colors = {
+	Cinema: 		'#5261ac', // purple
+	Travel: 		'#8cc63f', // green
+	Television: '#ec098d', //pink
+	Music: 		'#f78f1d', // orange
+	"TV Show": 	'#00aedb', // blue
+}
+for (let topic of sliderTopics) {
+	if (colors[topic.innerHTML.trim()])
+		topic.style.backgroundColor = colors[topic.innerHTML.trim()];
 }
 
-// =================================
+let slider = document.body.querySelector('.slider');
+let sliderWidth = slider.clientWidth;
+let sliderList = document.body.querySelector('.slider__list');
+let btnPrev = document.body.querySelector('.slider__btn-prev');
+let btnNext = document.body.querySelector('.slider__btn-next');
+// options for slider:
+let position = 0;
+const width = 325;
+let count = Math.floor(sliderWidth / width);
+count = Math.min(2, count);
+
+btnPrev.hidden = true;
+
+btnPrev.onclick = function() {
+	position += width * count;
+	if (position > -5) {
+		position = 0;
+		btnPrev.hidden = true;
+	}
+	sliderList.style.transform = `translateX(${position}px)`;
+	btnNext.hidden = false;
+}
+
+btnNext.onclick = function() {
+	position -= width * count;
+	if (position < -(sliderList.scrollWidth - sliderWidth - 5)){
+		position = - (sliderList.scrollWidth - sliderWidth + 30);
+		btnNext.hidden = true;
+	}
+	sliderList.style.transform = `translateX(${position}px)`;
+	btnPrev.hidden = false;
+}
+
+// disable tab for slider items
+for (let item of sliderList.children) { 
+	item.firstElementChild.setAttribute('tabindex', '-1');
+}
+
+window.addEventListener("resize", () => {
+	sliderWidth = slider.clientWidth;
+	count = Math.floor(sliderWidth / width);
+	count = Math.min(2, count);
+	if (position < -(sliderList.scrollWidth - sliderWidth - 5)){
+		position = - (sliderList.scrollWidth - sliderWidth + 30);
+		btnNext.hidden = true;
+	} else btnNext.hidden = false;
+	sliderList.style.transform = `translateX(${position}px)`;
+})
+
+//==================================================
+// =================================================
 
 document.addEventListener("DOMContentLoaded", function() {
 	
 	// background lines resizing
 	let bgLines = document.body.querySelector('.lines');
 	window.onscroll = function() {
-		bgLines.style.width = 650 + document.documentElement.scrollTop + 'px';
+		// bgLines.style.width = 650 + document.documentElement.scrollTop + 'px';
+		bgLines.style.transform = `rotate(30deg) scaleX(${
+			1 + (document.documentElement.scrollTop 
+			/ document.documentElement.clientHeight) * 2
+		})`		
 	}
 	// ===========================
 	
-	
-	
+	// resizing imgs from main gallery
+	let galleryList = document.body.querySelectorAll('.gallery__list');
 
-	// resizing imgs from top-stories
-	// let topStoriesLinks = document.querySelectorAll('.top-stories__wrap-img');
-
-	// function resizeHeight(arrElems) {
-	// 	let minHeight = 190; // max-height: 190px;
-	// 	arrElems.forEach((item) => { // search min height form imgs
-	// 		let imgH = item.firstElementChild.clientHeight;
-	// 		if (imgH && imgH < minHeight) minHeight = imgH;
-	// 	})
-	// 	arrElems.forEach((item) => {
-	// 		item.style.height = minHeight + 'px';
-	// 	})
-	// }
-	// resizeHeight(topStoriesLinks);
-	// ==================================
-
-	
-
-
-
-
-	// resizing imgs from content sliders
-	let sliders = document.body.querySelectorAll('.slider__images');
-	let listImg = document.querySelectorAll('.slider__small-img');
-
-	function calculateGeometryImg(sliderList, start) {
+	function calculateGeometryImg(galleryList, start) {
 		// if several sliders on the page
-		for (let i = 0; i < sliderList.length; i++) {
-			let currentSlider = sliderList[i];
-			let countImg 		= currentSlider.children.length < 5 ? 4 : 5;
-			let calcWidth 		= (currentSlider.clientWidth / countImg - 4) + 'px';
+		for (let i = 0; i < galleryList.length; i++) {
+			let currentGallery = galleryList[i];
+			let countImg = currentGallery.children.length < 5 ? 4 : 5;
+			let calcWidth = (currentGallery.clientWidth / countImg - 4) + 'px';
 			// resize small imgs
-			for (let i = 0; i < currentSlider.children.length; i++) {
-				currentSlider.children[i].style.height = calcWidth;
-				currentSlider.children[i].style.width 	= calcWidth;
+			for (let i = 0; i < currentGallery.children.length; i++) {
+				currentGallery.children[i].style.height = calcWidth;
+				currentGallery.children[i].style.width = calcWidth;
 
 				if (start && i && !((i + 1) % countImg)) {
-					currentSlider.children[i].style.marginRight = 0;
+					currentGallery.children[i].style.marginRight = 0;
 				}			
 			}
 		}
-		// small imgs shift to the middle 
-		listImg.forEach((item) => {
-			let diff = (item.clientHeight - item.clientWidth) / 2;
-			item.style.left = diff + "px";
-		})
 	}
-	calculateGeometryImg(sliders, true);
+	calculateGeometryImg(galleryList, true);
+
+	window.addEventListener("resize", () => {
+		calculateGeometryImg(galleryList, false);
+	})
 	// =================================
 
-
-
-
-
-
-
-
-	window.onresize = function () {
-		resizeHeight(topStoriesLinks);
-		calculateGeometryImg(sliders, false);
-	}
 
 	// create tag cloud 
 	let listTag = document.body.querySelectorAll('.tag-cloud__item');

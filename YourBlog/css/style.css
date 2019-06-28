@@ -2,7 +2,7 @@
 @import url('bg-lines.css');
 @import url('header.css');
 @import url('top-stories.css');
-/* @import url('main.css'); */
+@import url('main.css');
 @import url('sidebar.css');
 
 *, *::before, *::after {
@@ -12,7 +12,8 @@
    padding: 0;
 }
 *:focus {
-   outline: 5px dashed orange;
+   outline: 2px dashed orange;
+   outline-offset: -2px;
 }
 
 body {
@@ -24,8 +25,9 @@ body {
 
 .wrapper {
    max-width: 1054px;
+   height: 300vh;
    margin: auto;
-   background-color: rgba(255, 255, 255, .8);
+   background-color: rgba(255, 255, 255, .6);
    padding: 25px;
 }
 

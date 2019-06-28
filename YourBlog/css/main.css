@@ -91,34 +91,36 @@
    right: 10px;
 }
 
-.slider {
+.gallery {
    padding: 12px;
    border: 1px solid rgba(0, 0, 0, .25);
 }
-
-.slider__corrent-img {
+.gallery__corrent-img {
    width: 100%;
 }
-
-.slider__images {
+.gallery__list {
    display: flex;
    flex-wrap: wrap;
+   list-style: none;
 }
 
-.slider__item {
+.gallery__item {
    border: 1px solid rgba(0, 0, 0, .25);
    padding: 3px;
    margin-top: 10px;
    margin-right: 5px;
 }
 
-.slider__wrap-img {
+.gallery__wrap-img {
    position: relative;
    overflow: hidden;
    height: 100%;
 }
 
-.slider__small-img {
+.gallery__small-img {
    position: absolute;
+   top: 0;
+   left: 50%;
+   transform: translateX(-50%);
    height: 100%;
 }
