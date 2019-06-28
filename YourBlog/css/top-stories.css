@@ -124,24 +124,3 @@
    font-size: 15px;
    font-weight: bold;
 }
-
-
-/* @media screen and (max-width: 1050px) {
-   
-} */
-
-/* @media screen and (max-width: 800px) {
-   .top-stories__item:last-of-type {
-      display: none;
-   }
-}
-
-@media screen and (max-width: 550px) {
-   .top-stories__item:nth-of-type(2) {
-      display: none;
-   }
-   .top-stories__link {
-      height: auto;
-      max-height: 230px;
-   }
-} */
