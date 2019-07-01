@@ -24,11 +24,26 @@ body {
 }
 
 .wrapper {
+   /* box-sizing: content-box; */
+   position: relative;
    max-width: 1054px;
    height: 300vh;
-   margin: auto;
+   margin: 0 auto 75px;
    background-color: rgba(255, 255, 255, .7);
    padding: 25px;
+   border-image: linear-gradient(to right, #ec098d, #ec098d 20%, #5261ac 20%, #5261ac 40%, #8cc63f 40%, #8cc63f 60%, #00aedb 60%, #00aedb 80%, #f78f1d 80%) 0 0 25 repeat;
+	border-width: 0 0 5px;
+	border-style: solid;
+}
+
+.wrapper::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   right: -13px;
+   width: 13px;
+   height: 100%;
+   background: url(../img/decorate-lines.png) repeat-y;
 }
 
 .animate__hover-shift {

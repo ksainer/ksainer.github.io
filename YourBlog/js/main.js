@@ -84,15 +84,18 @@ document.addEventListener("DOMContentLoaded", function() {
 	let galleryList = document.body.querySelectorAll('.gallery__list');
 	for (let i = 0; i < galleryList.length; i++) {
 		calculateGeometryImgGallery(galleryList[i]);
-
-		let smallImg = galleryList[i].querySelectorAll('.gallery__small-img');
+		
 		let currentImg = galleryList[i].parentElement.querySelector('.gallery__current-img');
-		for (let i = 0; i < smallImg.length; i++) {
-			smallImg[i].onclick = function() {
-				let newSrc = this.getAttribute('data-bigSize');
+		
+		galleryList[i].onclick = function() {
+			let smallImg = event.target;
+			if (smallImg.tagName = 'IMG') {
+				let newSrc = smallImg.getAttribute('data-bigSize');
 				currentImg.setAttribute('src', newSrc);
 			}
 		}
+
+
 	}
 	window.addEventListener('resize', () => {
 		for (let i = 0; i < galleryList.length; i++) {
@@ -123,3 +126,13 @@ document.addEventListener("DOMContentLoaded", function() {
 	listTag.forEach(item => randomProperty(item));
 	// ==============================================
 });
+
+// let oldScroll = document.documentElement.scrollTop;
+// window.addEventListener('scroll', function(){
+// 	let newScroll = document.documentElement.scrollTop;
+// 	if(oldScroll > newScroll)
+// 		console.log('up');
+// 	else 
+// 		console.log('down');
+// 	oldScroll = document.documentElement.scrollTop;
+// })
