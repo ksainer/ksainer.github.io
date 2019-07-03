@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		galleryList[i].onclick = function() {
 			let smallImg = event.target;
 			if (smallImg.tagName = 'IMG') {
-				let newSrc = smallImg.getAttribute('data-bigSize');
+				let newSrc = smallImg.dataset.bigsize;
 				currentImg.setAttribute('src', newSrc);
 			}
 		}
@@ -125,6 +125,28 @@ document.addEventListener("DOMContentLoaded", function() {
 	let listTag = document.body.querySelectorAll('.tag-cloud__item');
 	listTag.forEach(item => randomProperty(item));
 	// ==============================================
+
+	// last-stories change category
+	let lastStories = document.body.querySelector('.last-stories');
+
+	lastStories.onclick = function(e) {
+		let target = e.target;
+
+		let topic = target.dataset.topic;
+		
+		if (!topic || target.classList.contains('active-category')) return;
+		
+		let activeCategory = lastStories.querySelector('.active-category');
+		let activeTopic = activeCategory.dataset.topic;
+
+		activeCategory.classList.remove('active-category');
+		lastStories.querySelector('.topic__' + activeTopic).style.display = 'none';
+		
+		target.classList.add('active-category');
+		lastStories.querySelector('.topic__' + topic).style.display = 'block';
+	}
+	// ================================================
+
 });
 
 // let oldScroll = document.documentElement.scrollTop;

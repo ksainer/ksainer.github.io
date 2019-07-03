@@ -52,17 +52,21 @@
    position: relative;
    z-index: 1;
    width: 33.33%;
-   min-width: 10px;
+   height: 100%;
+   min-width: 50px;
    padding: 0 10px;
-   cursor: pointer;
    background-color: #f78f1d;
+   transition: flex-shrink 0.2s;
+   transition: width 0.3s;
    text-transform: uppercase;
    font-size: 19px;
    font-weight: bold;
    color: #fff;
-   transition: flex-shrink 0.2s;
-   transition: width 0.3s;
    white-space: nowrap;
+   cursor: pointer;
+}
+.last-stories__category:focus {
+   outline: none;
 }
 
 .last-stories__category:first-child {
@@ -81,17 +85,22 @@
    content: '';
    position: absolute;
    bottom: 0px;
-   left: calc(50% - 6px);
+   left: 50%;
    z-index: -1;
    width: 12px;
    height: 12px;
    background-color: inherit;
-   transform: rotate(45deg);
+   transform: translateX(-50%) rotate(45deg);
    transform-origin: bottom left;
 }
 
 .last-stories__list {
+   display: none;
    list-style: none;
+}
+
+.topic__cinema {
+   display: block;
 }
 
 .last-stories__item {
@@ -108,6 +117,7 @@
    box-sizing: initial;
    padding: 3px;
    width: 75px;
+   max-height: 150px;
    border: 1px solid rgba(0, 0, 0, .3);
 }
 

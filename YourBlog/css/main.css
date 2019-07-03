@@ -11,7 +11,7 @@
 .post::before {
    content: '18';
    position: absolute;
-   top: 10px;
+   top: 5px;
    left: -80px;
    width: 68px;
    height: 46px;
@@ -26,15 +26,10 @@
    content: '20';
 }
 
-.post__title {
-   position: relative;
-   font-size: 38px;
-   font-weight: bold;
-}
-.post__title::before {
+.post::after {
    content: 'jun';
    position: absolute;
-   top: 56px;
+   top: 51px;
    left: -74px;
    width: 62px;
    height: 27px;
@@ -44,6 +39,11 @@
    font-weight: bold;
    color: #fff;
    text-align: center;
+}
+
+.post__title {
+   font-size: 38px;
+   font-weight: bold;
 }
 
 .post__text {
@@ -136,4 +136,17 @@
 }
 .gallery__small-img:hover {
    opacity: .9;
+}
+
+@media screen and (max-width: 1190px) {
+   .post::before {
+      left: -20px;
+   }
+   .post::after {
+      left: -14px;
+   }
+   .post__title {
+      margin-left: 60px;
+      font-size: 34px;
+   }
 }

@@ -12,7 +12,7 @@
    padding: 0;
 }
 *:focus {
-   outline: 2px dashed orange;
+   outline: 2px solid #58ddff;
    outline-offset: -2px;
 }
 
@@ -20,14 +20,13 @@ body {
    background-color: #ebebeb;
    font-family: "Open Sans", sans-serif;
    font-size: 19px;
-   color: #494949;
+   color: #515151;
+   overflow-x: hidden;
 }
 
 .wrapper {
-   /* box-sizing: content-box; */
    position: relative;
    max-width: 1054px;
-   height: 300vh;
    margin: 0 auto 75px;
    background-color: rgba(255, 255, 255, .7);
    padding: 25px;
@@ -36,7 +35,7 @@ body {
 	border-style: solid;
 }
 
-.wrapper::before {
+.wrapper::after {
    content: '';
    position: absolute;
    top: 0;
@@ -44,6 +43,7 @@ body {
    width: 13px;
    height: 100%;
    background: url(../img/decorate-lines.png) repeat-y;
+   z-index: -8;
 }
 
 .animate__hover-shift {
