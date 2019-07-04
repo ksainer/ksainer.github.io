@@ -147,6 +147,19 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 	// ================================================
 
+	let btnToUp = document.createElement('button');
+	btnToUp.className = 'button-to-up';
+	document.body.append(btnToUp);
+	btnToUp.onclick = function() {
+		window.scrollTo(0, 0);
+	}
+	if (document.documentElement.scrollTop < 150) btnToUp.style.transform = 'scaleY(0)';
+
+	window.addEventListener('scroll', () => {
+		if (document.documentElement.scrollTop < 150) btnToUp.style.transform = 'scaleY(0)';
+		else btnToUp.style.transform = '';
+	})
+
 });
 
 // let oldScroll = document.documentElement.scrollTop;

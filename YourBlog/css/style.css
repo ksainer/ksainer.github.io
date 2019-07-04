@@ -27,7 +27,7 @@ body {
 .wrapper {
    position: relative;
    max-width: 1054px;
-   margin: 0 auto 75px;
+   margin: 0 auto;
    background-color: rgba(255, 255, 255, .7);
    padding: 25px;
    border-image: linear-gradient(to right, #ec098d, #ec098d 20%, #5261ac 20%, #5261ac 40%, #8cc63f 40%, #8cc63f 60%, #00aedb 60%, #00aedb 80%, #f78f1d 80%) 0 0 25 repeat;
@@ -65,4 +65,52 @@ body {
 }
 .animate__hover-shift:hover::after {
    left: 0;
+}
+
+.button-to-up {
+   position: fixed;
+   bottom: 20px;
+   right: 50px;
+   width: 50px;
+   height: 50px;
+   background-color: #00aedb;
+   outline: none;
+   border: none;
+   cursor: pointer;
+   z-index: 200;
+   opacity: .6;
+   transition: transform .2s;
+   transform-origin: bottom;
+}
+.button-to-up:hover {
+   opacity: 1;
+}
+
+.button-to-up::before {
+   position: absolute;
+   top: 21px;
+   left: 17px;
+   display: block;
+   content: '';
+   width: 16px;
+   height: 16px;
+   border: 5px solid #fff;
+   border-right: none;
+   border-bottom: none;
+   transform: rotate(45deg);
+}
+
+.createdBy {
+   text-align: center;
+   line-height: 75px;
+}
+
+.createdBy__link {
+   text-decoration: none;
+   color: inherit;
+}
+
+.createdBy__link:hover {
+   text-decoration: underline;
+   color: #00aedb;
 }

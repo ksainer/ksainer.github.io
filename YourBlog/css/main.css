@@ -21,6 +21,7 @@
    color: #fff;
    line-height: 46px;
    text-align: center;
+   transition: left .2s;
 }
 .post:first-child::before {
    content: '20';
@@ -39,6 +40,7 @@
    font-weight: bold;
    color: #fff;
    text-align: center;
+   transition: left .2s;
 }
 
 .post__title {
