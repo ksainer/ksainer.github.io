@@ -7,8 +7,9 @@ let btnPrev = slider.querySelector('.slider__btn-prev');
 let btnNext = slider.querySelector('.slider__btn-next');
 // options for slider:
 let position = 0;
-const widthItem = 325;
-let count = Math.min(2, Math.floor(sliderWidth / widthItem));
+const widthItem = sliderList.firstElementChild.clientWidth;
+let count = Math.floor(sliderWidth / widthItem);
+count = Math.max(1, Math.min(2, count))
 
 btnPrev.hidden = true;
 
@@ -34,8 +35,8 @@ btnNext.onclick = function() {
 
 window.addEventListener("resize", () => {
 	sliderWidth = slider.clientWidth;
-	count = Math.floor(sliderWidth / widthItem);
-	count = Math.min(2, count);
+	count =  Math.floor(sliderWidth / widthItem);
+	count = Math.max(1, Math.min(2, count));
 	if (position < -(sliderList.scrollWidth - sliderWidth - 5)){
 		position = - (sliderList.scrollWidth - sliderWidth + 30);
 		btnNext.hidden = true;
