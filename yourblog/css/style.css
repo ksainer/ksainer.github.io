@@ -67,11 +67,7 @@ body {
    left: 0;
 }
 
-.button-to-up {
-   position: fixed;
-   bottom: 20px;
-   right: 50px;
-   width: 50px;
+.button {
    height: 50px;
    background-color: #00aedb;
    outline: none;
@@ -80,13 +76,23 @@ body {
    z-index: 200;
    opacity: .6;
    transition: transform .2s;
+   font-size: 60px;
+   text-align: center;
+   color: #fff;
+}
+.button:hover {
+   opacity: 1;
+}
+.button:focus {
+   opacity: 1;
+}
+
+.button-to-up {
+   position: fixed;
+   bottom: 20px;
+   right: 50px;
+   width: 50px;
    transform-origin: bottom;
-}
-.button-to-up:hover {
-   opacity: 1;
-}
-.button-to-up:focus {
-   opacity: 1;
 }
 
 .button-to-up::before {

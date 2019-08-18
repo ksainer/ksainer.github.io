@@ -183,6 +183,31 @@ document.addEventListener("DOMContentLoaded", function() {
 		else btnToUp.style.transform = '';
 	})
 
+	let btnSidebarShow = document.body.querySelector('.button-sidebar');
+	let sidebar = document.body.querySelector('.sidebar');
+	function sidebarShow() {
+		btnSidebarShow.classList.toggle('back-arrow');
+		sidebar.classList.toggle('sidebar-hidden');
+		if (sidebar.firstElementChild.style.display == 'block') 
+			sidebar.firstElementChild.style.display = 'none'; 
+		else sidebar.firstElementChild.style.display = 'block';
+	}
+	btnSidebarShow.onclick = sidebarShow;
+
+	function resetSidebar()  {
+		if (document.body.offsetWidth > 1000) {
+			sidebar.firstElementChild.style = 'block';
+			sidebar.classList.remove('sidebar-hidden');
+			btnSidebarShow.classList.remove('back-arrow');
+		} 
+	}
+
+	resetSidebar = throttle(resetSidebar, 1000);
+
+	window.addEventListener("resize", () => {
+		resetSidebar();
+	})
+
 });
 
 function throttle(f, ms) {
