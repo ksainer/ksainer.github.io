@@ -1,8 +1,11 @@
 .sidebar {
+   position: absolute;
+   right: 25px;
    max-width: 330px;
    min-width: 330px;
    margin-left: 20px;
    overflow: hidden;
+   transition: all .3s;
 }
 
 .aside__title {
@@ -260,6 +263,7 @@
 
 @media screen and (max-width: 1000px) {
    .sidebar {
-      display: none;
+      position: absolute;
+      right: -100%;
    }
 }

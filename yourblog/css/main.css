@@ -1,6 +1,8 @@
 .main {
    display: flex;
    margin-top: 20px;
+   margin-right: 350px;
+   transition: margin-right .3s;
 }
 
 .post {
@@ -40,7 +42,7 @@
    font-weight: bold;
    color: #fff;
    text-align: center;
-   transition: left .2s;
+   transition: left .3s;
 }
 
 .post__title {
@@ -152,6 +154,13 @@
       font-size: 34px;
    }
 }
+
+@media screen and (max-width: 1000px) {
+   .main {
+      margin-right: 0;
+   }
+}
+
 @media screen and (max-width: 620px) {
    .post__title {
       font-size: 28px;
