@@ -152,3 +152,27 @@
       font-size: 34px;
    }
 }
+@media screen and (max-width: 620px) {
+   .post__title {
+      font-size: 28px;
+   }
+   .post__text {
+      padding-left: 5px;
+      padding-right: 5px;
+   }
+   .post::before {
+      left: 0;
+      width: 46px;
+      height: 30px;
+      font-size: 26px;
+      line-height: 30px;
+   }
+   .post::after {
+      top: 35px;
+      left: 6px;
+      width: 40px;
+      height: 22px;
+      font-size: 16px;
+      line-height: 22px;
+   }
+}

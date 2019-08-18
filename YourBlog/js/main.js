@@ -33,7 +33,7 @@ btnNext.onclick = function() {
 	btnPrev.hidden = false;
 }
 
-window.addEventListener("resize", () => {
+function calculateSlider() {
 	sliderWidth = slider.clientWidth;
 	count =  Math.floor(sliderWidth / widthItem);
 	count = Math.max(1, Math.min(2, count));
@@ -42,6 +42,12 @@ window.addEventListener("resize", () => {
 		btnNext.hidden = true;
 	} else btnNext.hidden = false;
 	sliderList.style.transform = `translateX(${position}px)`;
+}
+
+calculateSlider = throttle(calculateSlider, 200);
+
+window.addEventListener("resize", () => {
+	calculateSlider();
 })
 
 // set color for slider topic
@@ -82,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			}	
 		}
 	}
+
 	let galleryList = document.body.querySelectorAll('.gallery__list');
 	for (let i = 0; i < galleryList.length; i++) {
 		calculateGeometryImgGallery(galleryList[i]);
@@ -90,29 +97,40 @@ document.addEventListener("DOMContentLoaded", function() {
 		
 		galleryList[i].onclick = function() {
 			let smallImg = event.target;
-			if (smallImg.tagName = 'IMG') {
+			if (smallImg.tagName == 'IMG') {
 				let newSrc = smallImg.dataset.bigsize;
 				currentImg.setAttribute('src', newSrc);
 			}
 		}
-
-
 	}
-	window.addEventListener('resize', () => {
+
+	function calculateGeometryImgGalleries() {
 		for (let i = 0; i < galleryList.length; i++) {
 			calculateGeometryImgGallery(galleryList[i]);
 		}
+	}
+
+	calculateGeometryImgGalleries = throttle(calculateGeometryImgGalleries, 1000);
+
+	window.addEventListener('resize', () => {
+		calculateGeometryImgGalleries();
 	})
 	//===============================================
 
 	// background lines resizing
 	let bgLines = document.body.querySelector('.lines');
 
-	window.addEventListener('scroll', () => {
+	function transformLines() {
 		bgLines.style.transform = `rotate(30deg) scaleX(${
 			1 + (document.documentElement.scrollTop 
 			/ document.documentElement.clientHeight) * 2
-		})`	
+		})`;
+	}
+
+	transformLines = throttle(transformLines, 100);
+
+	window.addEventListener('scroll', () => {
+		transformLines();
 	})
 	// ==============================================
 
@@ -148,11 +166,15 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 	// ================================================
 
-	let btnToUp = document.createElement('button');
-	btnToUp.className = 'button-to-up';
-	document.body.append(btnToUp);
-	btnToUp.onclick = function() {
-		window.scrollTo(0, 0);
+	let btnToUp = document.body.querySelector('.button-to-up');
+	btnToUp.onclick = function () {
+		let timerID = setInterval(() => {
+			let coords = window.pageYOffset;
+			if (coords > 0) {
+				coords -= 150;
+				window.scrollTo(0, coords);
+			} else clearInterval(timerID);
+		}, 10);
 	}
 	if (document.documentElement.scrollTop < 150) btnToUp.style.transform = 'scaleY(0)';
 
@@ -162,6 +184,27 @@ document.addEventListener("DOMContentLoaded", function() {
 	})
 
 });
+
+function throttle(f, ms) {
+	var delay = true;
+	var saveArgs = null;
+
+	return function wrap() {
+		if (delay) {
+			f.apply(this, arguments);
+			saveArgs = null;
+			delay = false;
+			setTimeout(function() {
+				delay = true;
+				if (saveArgs) {
+					wrap(...saveArgs);
+				}
+			}, ms);
+		} else {
+			saveArgs = arguments;
+		}
+	}
+}
 
 // let oldScroll = document.documentElement.scrollTop;
 // window.addEventListener('scroll', function(){

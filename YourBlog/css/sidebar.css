@@ -34,9 +34,8 @@
    position: absolute;
    right: -36px;
    z-index: -1;
-   border: 36px solid transparent;
-   border-top: none;
-   border-bottom-color: #5261ac;
+   border-right: 36px solid transparent;
+   border-bottom: 36px solid #5261ac;
 }
 
 .last-stories__menu {
