@@ -102,7 +102,7 @@
 
 .gallery__current-img {
    max-width: 100%;
-   max-height: 500px;
+   max-height: 80vh;
 }
 
 .gallery__list {
@@ -156,7 +156,22 @@
 
 @media screen and (max-width: 1000px) {
    .content {
-      margin-right: 20px;
+      margin-right: 13px;
+   }
+   .post__title {
+      font-size: 32px;
+      margin-right: 22px;
+      margin-left: 15px;
+   }
+   .post__text {
+      margin-left: 10px;
+      margin-right: 5px;
+   }
+   .post::before {
+      display: none;
+   }
+   .post::after {
+      display: none;
    }
 }
 
@@ -168,19 +183,13 @@
       padding-left: 5px;
       padding-right: 5px;
    }
-   .post::before {
-      left: 0;
-      width: 46px;
-      height: 30px;
-      font-size: 26px;
-      line-height: 30px;
+}
+
+@media screen and (max-width: 450px) {
+   .post__title {
+      font-size: 22px;
    }
-   .post::after {
-      top: 35px;
-      left: 6px;
-      width: 40px;
-      height: 22px;
-      font-size: 16px;
-      line-height: 22px;
+   .post__text {
+      font-size: 15px;
    }
 }

@@ -130,3 +130,12 @@ body {
       padding-right: 0;
    }
 }
+
+@media screen and (max-width: 1000px) {
+   .wrapper {
+      padding: 25px 0;
+   }
+   .wrapper::after {
+      display: none;
+   }
+}

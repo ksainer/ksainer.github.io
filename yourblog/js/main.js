@@ -74,25 +74,30 @@ for (let item of sliderList.children) {
 
 document.addEventListener("DOMContentLoaded", function() {
 	// gallery for posts
+	let galleryList = document.body.querySelectorAll('.gallery__list');
+
 	function calculateGeometryImgGallery(listImg) {
-		let items = listImg.children;
-		let countImg = items.length < 5 ? 4 : 5;
-		let width = listImg.clientWidth / countImg -4 + 'px';
-	
-		for (let i = 0; i < items.length; i++) {
-			items[i].style.height = width;
-			items[i].style.width = width;
-	
-			if (i && !((i + 1) % countImg)) {
-				items[i].style.marginRight = 0;
-			}	
+		for (let j = 0; j < listImg.length; j++) {
+			let items = listImg[j].children;
+			let countImg = items.length < 5 ? 4 : 5;
+			let width = listImg[j].clientWidth / countImg -4 + 'px';
+		
+			for (let i = 0; i < items.length; i++) {
+				items[i].style.height = width;
+				items[i].style.width = width;
+		
+				if (i && !((i + 1) % countImg)) {
+					items[i].style.marginRight = 0;
+				}	
+			}
 		}
 	}
 
-	let galleryList = document.body.querySelectorAll('.gallery__list');
+	calculateGeometryImgGallery(galleryList);
+	
+	calculateGeometryImgGallery = throttle(calculateGeometryImgGallery, 1000);
+	
 	for (let i = 0; i < galleryList.length; i++) {
-		calculateGeometryImgGallery(galleryList[i]);
-		
 		let currentImg = galleryList[i].parentElement.querySelector('.gallery__current-img');
 		
 		galleryList[i].onclick = function() {
@@ -103,17 +108,9 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		}
 	}
-
-	function calculateGeometryImgGalleries() {
-		for (let i = 0; i < galleryList.length; i++) {
-			calculateGeometryImgGallery(galleryList[i]);
-		}
-	}
-
-	calculateGeometryImgGalleries = throttle(calculateGeometryImgGalleries, 1000);
-
+	
 	window.addEventListener('resize', () => {
-		calculateGeometryImgGalleries();
+		calculateGeometryImgGallery(galleryList);
 	})
 	//===============================================
 
@@ -177,20 +174,27 @@ document.addEventListener("DOMContentLoaded", function() {
 			} else clearInterval(timerID);
 		}, 10);
 	}
-	if (document.documentElement.scrollTop < 150) btnToUp.style.transform = 'scaleY(0)';
 
-	window.addEventListener('scroll', () => {
+	function showbtnToUp() {
 		if (document.documentElement.scrollTop < 150) btnToUp.style.transform = 'scaleY(0)';
 		else btnToUp.style.transform = '';
-	})
+	};
+	showbtnToUp();
 
+	showbtnToUp = throttle(showbtnToUp, 500);
+
+	window.addEventListener('scroll', () => {
+		showbtnToUp();
+	})
+	// ================================================
+	
 	// button show and hide sidebar
 	let btnSidebarShow = document.body.querySelector('.button-sidebar');
 	let sidebar = document.body.querySelector('.sidebar');
 
 	function sidebarShow() {
 		btnSidebarShow.classList.toggle('back-arrow');
-		sidebar.classList.toggle('sidebar-hidden');
+		sidebar.classList.toggle('sidebar-show');
 		if (sidebar.firstElementChild.style.display == 'block') 
 			sidebar.firstElementChild.style.display = 'none'; 
 		else sidebar.firstElementChild.style.display = 'block';
@@ -198,32 +202,31 @@ document.addEventListener("DOMContentLoaded", function() {
 	btnSidebarShow.onclick = sidebarShow;
 
 	function resetSidebar()  {
-		if (document.body.offsetWidth > 1000) {
+		if (window.innerWidth > 1000) {
 			sidebar.firstElementChild.style = 'block';
-			sidebar.classList.remove('sidebar-hidden');
+			sidebar.classList.remove('sidebar-show');
 			btnSidebarShow.classList.remove('back-arrow');
+			setTimeout(() => calculateGeometryImgGallery(galleryList), 400); 
 		} 
 	}
 	
-	resetSidebar = throttle(resetSidebar, 1000);
+	resetSidebar = throttle(resetSidebar, 200);
 
-	window.addEventListener("resize", () => {
-		resetSidebar();
-	})
-
+	window.addEventListener("resize", () => resetSidebar());
+	// ================================================
 });
 
 // throttle function
 function throttle(f, ms) {
-	var delay = true;
-	var saveArgs = null;
+	let delay = true;
+	let saveArgs = null;
 
 	return function wrap() {
 		if (delay) {
 			f.apply(this, arguments);
 			saveArgs = null;
 			delay = false;
-			setTimeout(function() {
+			setTimeout(() => {
 				delay = true;
 				if (saveArgs) {
 					wrap(...saveArgs);

@@ -1,9 +1,9 @@
 .sidebar {
    position: relative;
    /* outline: 2px solid red; */
-   max-width: 330px;
-   min-width: 330px;
-   margin-left: 20px;
+   max-width: 350px;
+   min-width: 350px;
+   padding-left: 20px;
    transition: all .3s;
    transform-origin: right top;
    /* border-image: linear-gradient(to top, #ec098d, #ec098d 20%, #5261ac 20%, #5261ac 40%, #8cc63f 40%, #8cc63f 60%, #00aedb 60%, #00aedb 80%, #f78f1d 80%) 0 0 0 150 repeat;
@@ -15,8 +15,8 @@
    content:'«';
    position: absolute;
    width: 35px;
-   top: 11px;
-   left: -35px;
+   top: 0;
+   left: -20px;
    display: none;
    font-size: 60px;
    line-height: 0;
@@ -287,12 +287,13 @@
 @media screen and (max-width: 1000px) {
    .sidebar {
       position: absolute;
-      right: -25px;
-      width: 0;
+      right: 0;
       min-height: 101%;
-      padding-bottom: 20px;
       min-width: 13px;
-      background: url(../img/decorate-lines.png) repeat-y;
+      width: 0;
+      padding-left: 0;
+      padding-bottom: 20px;
+      background: #fff url(../img/decorate-lines.png) repeat-y;
    }
    .sidebar__wrap {
       display: none;
@@ -302,28 +303,19 @@
    }
 }
 
-.sidebar-hidden {
+.sidebar-show {
    min-width: 350px;
    padding-left: 20px;
-   background-color: #fff;
-}
-
-@media screen and (max-width: 620px) {
-   .sidebar {
-      right: 0;
-   }
 }
 
 @media screen and (max-width: 450px) {
-   .sidebar-hidden {
+   .sidebar-show {
       min-width: 100%;
       max-width: 100%;
-      right: 0;
    }
    .button-sidebar {
       top: -15px;
       left: auto;
       right: 0;
-      width: 50px;
    }
 }
