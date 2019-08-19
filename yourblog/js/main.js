@@ -166,6 +166,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 	// ================================================
 
+	// button scrolls to top
 	let btnToUp = document.body.querySelector('.button-to-up');
 	btnToUp.onclick = function () {
 		let timerID = setInterval(() => {
@@ -183,8 +184,10 @@ document.addEventListener("DOMContentLoaded", function() {
 		else btnToUp.style.transform = '';
 	})
 
+	// button show and hide sidebar
 	let btnSidebarShow = document.body.querySelector('.button-sidebar');
 	let sidebar = document.body.querySelector('.sidebar');
+
 	function sidebarShow() {
 		btnSidebarShow.classList.toggle('back-arrow');
 		sidebar.classList.toggle('sidebar-hidden');
@@ -201,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			btnSidebarShow.classList.remove('back-arrow');
 		} 
 	}
-
+	
 	resetSidebar = throttle(resetSidebar, 1000);
 
 	window.addEventListener("resize", () => {
@@ -210,6 +213,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
+// throttle function
 function throttle(f, ms) {
 	var delay = true;
 	var saveArgs = null;
