@@ -176,6 +176,12 @@
 }
 
 @media screen and (max-width: 620px) {
+   .gallery {
+      padding: 0;
+   }
+   .gallery__list {
+      justify-content: space-between;      
+   }
    .post__title {
       font-size: 28px;
    }
@@ -191,5 +197,8 @@
    }
    .post__text {
       font-size: 15px;
+   }
+   .post__footer {
+      font-size: 14px;
    }
 }

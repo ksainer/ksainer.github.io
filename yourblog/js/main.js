@@ -1,10 +1,10 @@
 // top-stories slider
 
-let slider = document.body.querySelector('.slider');
+const slider = document.body.querySelector('.slider');
 let sliderWidth = slider.clientWidth;
-let sliderList = slider.querySelector('.slider__list');
-let btnPrev = slider.querySelector('.slider__btn-prev');
-let btnNext = slider.querySelector('.slider__btn-next');
+const sliderList = slider.querySelector('.slider__list');
+const btnPrev = slider.querySelector('.slider__btn-prev');
+const btnNext = slider.querySelector('.slider__btn-next');
 // options for slider:
 let position = 0;
 const widthItem = sliderList.firstElementChild.clientWidth;
@@ -51,8 +51,8 @@ window.addEventListener("resize", () => {
 })
 
 // set color for slider topic
-let sliderTopics = sliderList.querySelectorAll('.slider__topic');
-let colors = {
+const sliderTopics = sliderList.querySelectorAll('.slider__topic');
+const colors = {
 	Cinema: 		'#5261ac', // purple
 	Travel: 		'#8cc63f', // green
 	Television: '#ec098d', //pink
@@ -74,13 +74,13 @@ for (let item of sliderList.children) {
 
 document.addEventListener("DOMContentLoaded", function() {
 	// gallery for posts
-	let galleryList = document.body.querySelectorAll('.gallery__list');
+	const galleryList = document.body.querySelectorAll('.gallery__list');
 
 	function calculateGeometryImgGallery(listImg) {
 		for (let j = 0; j < listImg.length; j++) {
-			let items = listImg[j].children;
-			let countImg = items.length < 5 ? 4 : 5;
-			let width = listImg[j].clientWidth / countImg -4 + 'px';
+			const items = listImg[j].children;
+			const countImg = items.length < 5 ? 4 : 5;
+			const width = listImg[j].clientWidth / countImg -4 + 'px';
 		
 			for (let i = 0; i < items.length; i++) {
 				items[i].style.height = width;
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	//===============================================
 
 	// background lines resizing
-	let bgLines = document.body.querySelector('.lines');
+	const bgLines = document.body.querySelector('.lines');
 
 	function transformLines() {
 		bgLines.style.transform = `rotate(30deg) scaleX(${
@@ -138,22 +138,22 @@ document.addEventListener("DOMContentLoaded", function() {
 		tag.style.fontWeight = Math.random() < 0.3 ? 'bold' : '';
 		tag.style.color = Math.random() < 0.15 ? '#f78f1d' : '';
 	}
-	let listTag = document.body.querySelectorAll('.tag-cloud__item');
+	const listTag = document.body.querySelectorAll('.tag-cloud__item');
 	listTag.forEach(item => randomProperty(item));
 	// ==============================================
 
 	// last-stories change category
-	let lastStories = document.body.querySelector('.last-stories');
+	const lastStories = document.body.querySelector('.last-stories');
 
 	lastStories.onclick = function(e) {
-		let target = e.target;
+		const target = e.target;
 
-		let topic = target.dataset.topic;
+		const topic = target.dataset.topic;
 		
 		if (!topic || target.classList.contains('active-category')) return;
 		
-		let activeCategory = lastStories.querySelector('.active-category');
-		let activeTopic = activeCategory.dataset.topic;
+		const activeCategory = lastStories.querySelector('.active-category');
+		const activeTopic = activeCategory.dataset.topic;
 
 		activeCategory.classList.remove('active-category');
 		lastStories.querySelector('.topic__' + activeTopic).style.display = 'none';
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	// ================================================
 
 	// button scrolls to top
-	let btnToUp = document.body.querySelector('.button-to-up');
+	const btnToUp = document.body.querySelector('.button-to-up');
 	btnToUp.onclick = function () {
 		let timerID = setInterval(() => {
 			let coords = window.pageYOffset;
@@ -189,8 +189,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	// ================================================
 	
 	// button show and hide sidebar
-	let btnSidebarShow = document.body.querySelector('.button-sidebar');
-	let sidebar = document.body.querySelector('.sidebar');
+	const btnSidebarShow = document.body.querySelector('.button-sidebar');
+	const sidebar = document.body.querySelector('.sidebar');
 
 	function sidebarShow() {
 		btnSidebarShow.classList.toggle('back-arrow');
