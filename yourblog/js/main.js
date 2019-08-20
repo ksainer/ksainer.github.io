@@ -191,19 +191,20 @@ document.addEventListener("DOMContentLoaded", function() {
 	// button show and hide sidebar
 	const btnSidebarShow = document.body.querySelector('.button-sidebar');
 	const sidebar = document.body.querySelector('.sidebar');
+	const sidebarWrap = sidebar.querySelector('.sidebar__wrap');
 
 	function sidebarShow() {
 		btnSidebarShow.classList.toggle('back-arrow');
 		sidebar.classList.toggle('sidebar-show');
-		if (sidebar.firstElementChild.style.display == 'block') 
-			sidebar.firstElementChild.style.display = 'none'; 
-		else sidebar.firstElementChild.style.display = 'block';
+		if (sidebarWrap.style.display == 'block') 
+			sidebarWrap.style.display = 'none'; 
+		else sidebarWrap.style.display = 'block';
 	}
 	btnSidebarShow.onclick = sidebarShow;
 
 	function resetSidebar()  {
 		if (window.innerWidth > 1000) {
-			sidebar.firstElementChild.style = 'block';
+			sidebarWrap.style = 'block';
 			sidebar.classList.remove('sidebar-show');
 			btnSidebarShow.classList.remove('back-arrow');
 			setTimeout(() => calculateGeometryImgGallery(galleryList), 400); 

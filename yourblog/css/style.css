@@ -75,7 +75,7 @@ body {
    cursor: pointer;
    z-index: 200;
    opacity: .6;
-   transition: transform .2s;
+   transition: all .3s;
    font-size: 60px;
    text-align: center;
    color: #fff;
@@ -85,6 +85,12 @@ body {
 }
 .button:focus {
    opacity: 1;
+   animation-name: opacityShow;
+   animation-delay: 1s;
+   animation-duration: 2s;
+   animation-timing-function: linear;
+   animation-direction: reverse;
+   animation-fill-mode: forwards;
 }
 
 .button-to-up {
@@ -139,3 +145,5 @@ body {
       display: none;
    }
 }
+
+@keyframes opacityShow {0% { opacity: .6 } 100% { opacity: 1 }}
