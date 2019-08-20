@@ -118,10 +118,11 @@ document.addEventListener("DOMContentLoaded", function() {
 	const bgLines = document.body.querySelector('.lines');
 
 	function transformLines() {
-		bgLines.style.transform = `rotate(30deg) scaleX(${
-			1 + (document.documentElement.scrollTop 
-			/ document.documentElement.clientHeight) * 2
-		})`;
+		// bgLines.style.transform = `rotate(30deg) scaleX(${
+		// 	1 + (document.documentElement.scrollTop 
+		// 	/ document.documentElement.clientHeight) * 2
+		// })`;
+		bgLines.style.transform = `rotate(30deg) scaleX(2)`;
 	}
 
 	transformLines = throttle(transformLines, 100);
