@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		for (let j = 0; j < listImg.length; j++) {
 			const items = listImg[j].children;
 			const countImg = items.length < 5 ? 4 : 5;
-			const width = listImg[j].clientWidth / countImg -4 + 'px';
+			const width = listImg[j].clientWidth / countImg  + 'px';
 		
 			for (let i = 0; i < items.length; i++) {
 				items[i].style.height = width;

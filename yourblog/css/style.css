@@ -80,9 +80,7 @@ body {
    text-align: center;
    color: #fff;
 }
-.button:hover {
-   opacity: 1;
-}
+
 .button:focus {
    opacity: 1;
    animation-name: opacityShow;
@@ -91,6 +89,11 @@ body {
    animation-timing-function: linear;
    animation-direction: reverse;
    animation-fill-mode: forwards;
+}
+
+.button:hover {
+   opacity: 1;
+   animation-fill-mode: backwards;
 }
 
 .button-to-up {
