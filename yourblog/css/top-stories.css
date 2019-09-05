@@ -14,7 +14,7 @@
 /* ======= slider buttons ========== */
 .slider__btn {
    position: absolute;
-   z-index: 100;
+   z-index: 2;
    top: 0px;
    width: 25px;
    height: 230px;

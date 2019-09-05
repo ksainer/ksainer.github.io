@@ -192,21 +192,27 @@ document.addEventListener("DOMContentLoaded", function() {
 	const btnSidebarShow = document.body.querySelector('.button-sidebar');
 	const sidebar = document.body.querySelector('.sidebar');
 	const sidebarWrap = sidebar.querySelector('.sidebar__wrap');
+	const scrim = document.body.querySelector('.scrim');
+	scrim.hidden = true;
 
 	function sidebarShow() {
 		btnSidebarShow.classList.toggle('back-arrow');
 		sidebar.classList.toggle('sidebar-show');
+		scrim.hidden = scrim.hidden ? false : true;
 		if (sidebarWrap.style.display == 'block') 
 			sidebarWrap.style.display = 'none'; 
 		else sidebarWrap.style.display = 'block';
 	}
 	btnSidebarShow.onclick = sidebarShow;
 
+	scrim.onclick = sidebarShow;
+
 	function resetSidebar()  {
 		if (window.innerWidth > 1000) {
 			sidebarWrap.style = 'block';
 			sidebar.classList.remove('sidebar-show');
 			btnSidebarShow.classList.remove('back-arrow');
+			scrim.hidden = true;
 			setTimeout(() => calculateGeometryImgGallery(galleryList), 400); 
 		} 
 	}
