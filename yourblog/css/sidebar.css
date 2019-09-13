@@ -4,7 +4,7 @@
    max-width: 350px;
    min-width: 350px;
    padding-left: 20px;
-   transition: all .3s;
+   transition: min-width .3s;
    transform-origin: right top;
    /* border-image: linear-gradient(to top, #ec098d, #ec098d 20%, #5261ac 20%, #5261ac 40%, #8cc63f 40%, #8cc63f 60%, #00aedb 60%, #00aedb 80%, #f78f1d 80%) 0 0 0 150 repeat;
    border-width: 0 0 0 13px;
@@ -15,7 +15,7 @@
    content:'«';
    position: absolute;
    width: 35px;
-   top: 0;
+   top: -36px;
    left: -20px;
    display: none;
    font-size: 60px;
@@ -29,19 +29,6 @@
 }
 .back-arrow.button-sidebar::before {
    content:'»';
-}
-
-.aside__title {
-   height: 36px;
-   width: 100%;
-   padding: 0 15px;
-   line-height: 36px;
-   background-color: #5261ac;
-   text-transform: uppercase;
-   font-size: 18px;
-   font-weight: bold;
-   color: #fff;
-
 }
 
 .last-stories__title {
@@ -81,8 +68,8 @@
    min-width: 50px;
    padding: 0 10px;
    background-color: #f78f1d;
-   transition: flex-shrink 0.2s;
-   transition: width 0.3s;
+   transition: 0.3s;
+   transition-property: flex-shrink, width;
    text-transform: uppercase;
    font-size: 19px;
    font-weight: bold;
@@ -92,13 +79,7 @@
 }
 .last-stories__category:focus {
    outline: none;
-}
-
-.last-stories__category:first-child {
-   background-color: #ec098d;
-}
-.last-stories__category:last-child {
-   background-color: #00aedb;
+   filter: brightness(1.2);
 }
 
 .last-stories__category:hover {
@@ -233,6 +214,9 @@
    padding: 10px 0 5px;
    border-bottom: 1px solid rgba(0, 0, 0, .3);  
 }
+.archives__item:hover {
+   text-decoration: underline;
+}
 .archives__item:last-child {
    border-bottom: none;
 }
@@ -248,9 +232,7 @@
    font-size: 14px;
    color: inherit;
 }
-.archives__link:hover {
-   text-decoration: underline;
-}
+
 .archives__link::before {
    position: absolute;
    top: 5px;
@@ -294,10 +276,12 @@
       width: 0;
       padding-left: 0;
       padding-bottom: 20px;
+      margin-top: 36px;
       background: #fff url(../img/decorate-lines.png) repeat-y;
    }
    .sidebar__wrap {
       display: none;
+      margin-top: -36px;
    }
    .button-sidebar {
       display: block;
@@ -315,7 +299,7 @@
       max-width: 100%;
    }
    .button-sidebar {
-      top: -15px;
+      top: -51px;
       left: auto;
       right: 0;
    }

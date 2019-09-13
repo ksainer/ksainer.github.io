@@ -1,11 +1,3 @@
-.top-stories__title {
-   text-transform: uppercase;
-   font-size: 21px;
-   line-height: 40px;
-   font-weight: bold;
-   color: #00aedb;
-}
-
 .slider {
    position: relative;
    overflow: hidden;

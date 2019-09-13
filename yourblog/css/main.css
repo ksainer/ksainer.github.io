@@ -4,6 +4,10 @@
    margin-top: 20px;
 }
 
+.content {
+   flex-grow: 1;
+}
+
 .post {
    position: relative;
    margin-bottom: 35px;
