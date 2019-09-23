@@ -48,8 +48,8 @@
 							<button class="auth__sign-up button" type="button">Sing up</button>
 						</div>
 						<section class="form-sign-in visible">
-							<form action="/" method="POST">
-								<input type="text" required name="username" placeholder="Email Addres" class="auth__input input">
+							<form action="/" method="POST" onsubmit="alert('Welcome: ' + this.email.value); return false">
+								<input type="text" required name="email" placeholder="Email Addres" class="auth__input input">
 								<input type="password" required name="password" placeholder="Password" class="auth__input input">
 								<label class="form-sign-in__keepme">
 									<input type="checkbox" name="keepme">
@@ -60,14 +60,14 @@
 							</form>
 						</section>
 						<section class="form-sign-up">
-							<form action="/" method="POST">
+							<form action="/" method="POST" onsubmit='alert("click \"Sign Up!\""); return false'>
 								<div class="form-sign-up__full-name">
 									<input type="text" required name="firstname" placeholder="First Name*" class="auth__input input">
 									<input type="text" required name="lastname" placeholder="Last Name*" class="auth__input input">
 								</div>
-								<input type="text" required name="lastname" placeholder="Email Addres*" class="auth__input input">
-								<input type="password" required name="lastname" placeholder="Password*" class="auth__input input">
-								<input type="password" required name="lastname" placeholder="Confirm Password*" class="auth__input input">
+								<input type="email" required name="email" placeholder="Email Addres*" class="auth__input input">
+								<input type="password" required name="password" placeholder="Password*" class="auth__input input">
+								<input type="password" required name="repassword" placeholder="Confirm Password*" class="auth__input input">
 								<button type="submit" class="auth__button form-sign-up__button button">Sign up</button>
 							</form>
 						</section>
