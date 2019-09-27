@@ -40,41 +40,6 @@
 					<a href="#" class="social-icons__item social-icons__tw"></a>
 				</div> -->
 
-				<div class="sign-in">
-					<button class="button sign-in__button">Sign in</button>
-					<div class="auth" hidden>
-						<div class="auth__choose">
-							<button class="auth__sign-in button auth__active" type="button">Sign in</button>
-							<button class="auth__sign-up button" type="button">Sing up</button>
-						</div>
-						<section class="form-sign-in visible">
-							<form action="/" method="POST" onsubmit="alert('Welcome: ' + this.email.value); return false">
-								<input type="text" required name="email" placeholder="Email Addres" class="auth__input input">
-								<input type="password" required name="password" placeholder="Password" class="auth__input input">
-								<label class="form-sign-in__keepme">
-									<input type="checkbox" name="keepme">
-									Keep my sing in
-								</label>
-								<button type="submit" class="auth__button button">Sign in</button>
-								<div class="forgot-password"><a href="/" class="forgot-password__link">Forgot your password?</a></div>
-							</form>
-						</section>
-						<section class="form-sign-up">
-							<form action="/" method="POST" onsubmit='alert("click \"Sign Up!\""); return false'>
-								<div class="form-sign-up__full-name">
-									<input type="text" required name="firstname" placeholder="First Name*" class="auth__input input">
-									<input type="text" required name="lastname" placeholder="Last Name*" class="auth__input input">
-								</div>
-								<input type="email" required name="email" placeholder="Email Addres*" class="auth__input input">
-								<input type="password" required name="password" placeholder="Password*" class="auth__input input">
-								<input type="password" required name="repassword" placeholder="Confirm Password*" class="auth__input input">
-								<button type="submit" class="auth__button form-sign-up__button button">Sign up</button>
-							</form>
-						</section>
-						<button class="auth__close-button"></button>
-					</div>
-				</div>
-
 				<div class="account">
 					<button class="account__button">
 						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -98,7 +63,7 @@
 							<circle style="fill:#FF0000;" cx="250" cy="78" r="33"/>
 						</svg>
 					</button>
-					<ul class="account__menu">
+					<ul class="account__menu drop-down-menu">
 						<li class="account__item animate__hover-shift"><a href="/yourblog/profile.html" class="account__link"><span class="account__username">User</span><br>Profile</a></li>
 						<li class="account__item animate__hover-shift"><a href="#" class="account__link">Add New Post</a></li>
 						<li class="account__item animate__hover-shift"><a href="#" class="account__link">Your Posts</a></li>
@@ -127,11 +92,77 @@
 					</ul>
 				</div>
 
+				<div class="sign-in">
+					<button class="button sign-in__button">Sign in</button>
+					<div class="auth" hidden>
+						<div class="auth__choose">
+							<button class="auth__sign-in button auth__active" type="button">Sign in</button>
+							<button class="auth__sign-up button" type="button">Sing up</button>
+						</div>
+						<section class="form-sign-in visible">
+							<form action="/" method="POST">
+								<input type="hidden" name="act" value="signin">
+								<label class="label">Email Addres:
+									<input type="email" name="email" class="auth__input input valid" placeholder="JohnCena777@yourblog.com" maxlength="32" minlength="8" autocapitalize="off" autocorrect="off" autocomplete="email" required>
+								</label>
+								<div class="wrap-password">
+									<label class="label">Password:
+										<input type="password" name="password" class="auth__input input" maxlength="32" minlength="6" autocapitalize="off" autocorrect="off" required>
+									</label>
+									<span class="show-pass"></span>
+								</div>
+								<label class="form-sign-in__keepme">
+									<input type="checkbox" name="keepme" checked>
+									Keep my sing in
+								</label>
+								<button type="submit" class="auth__button button">Sign in</button>
+								<div class="forgot-password"><a href="/" class="forgot-password__link">Forgot your password?</a></div>
+							</form>
+						</section>
+						<section class="form-sign-up">
+							<form action="/" method="POST">
+								<input type="hidden" name="act" value="signup">
+								<div class="form-sign-up__full-name">
+									<label class="label auth__firstname">First Name:
+										<input type="text" name="firstname" class="auth__input input" placeholder="John" autocapitalize="off" autocorrect="off" required>
+									</label>
+									<label class="label">Last Name:
+										<input type="text" name="lastname" class="auth__input input" placeholder="Cena" autocapitalize="off" autocorrect="off" required>
+									</label>
+								</div>
+								<div class="input-wrap">
+									<label class="label">Email Addres:
+										<input type="email" name="email" class="auth__input input" placeholder="JohnCena777@yourblog.com" onBlur="checkEmail(this)" autocapitalize="off" autocorrect="off" required>
+									</label>
+									<span class="input-text-error"></span>
+								</div>
+								<div class="wrap-password">
+									<div class="input-wrap">
+										<label class="label">Password:
+											<input type="password" name="password" class="auth__input input" minlength="8" maxlength="32" autocapitalize="off" autocorrect="off" required>
+										</label>
+										<span class="input-text-error"></span>
+									</div>
+									<span class="form-sign-up__show-pass show-pass"></span>
+									<div class="input-wrap">
+										<label class="label">Confirm Password:
+											<input type="password" name="repassword" class="auth__input input" minlength="8" maxlength="32" autocapitalize="off" autocorrect="off" required>
+										</label>
+										<span class="input-text-error"></span>
+									</div>
+								</div>
+								<button type="submit" class="auth__button form-sign-up__button button">Sign up</button>
+							</form>
+						</section>
+						<button class="close-button auth__close-button"></button>
+					</div>
+				</div>
+
 			</div>
 
-			<nav>
-				<ul class="main-menu">
-					<li class="main-menu__item animate__hover-shift"><a href="/yourblog/index.html" class="main-menu__link">Home</a></li>
+			<nav class="main-menu">
+				<ul class="main-menu__list">
+					<li class="main-menu__item animate__hover-shift"><a href="/index.php" class="main-menu__link">Home</a></li>
 					<li class="main-menu__item animate__hover-shift"><a href="#" class="main-menu__link">Cinema</a></li>
 					<li class="main-menu__item animate__hover-shift"><a href="#" class="main-menu__link">Magazine</a></li>
 					<li class="main-menu__item animate__hover-shift"><a href="#" class="main-menu__link">CssAuthor.com</a></li>
@@ -139,6 +170,8 @@
 					<li class="main-menu__item animate__hover-shift"><a href="#" class="main-menu__link">Archives</a></li>
 					<li class="main-menu__item animate__hover-shift"><a href="#" class="main-menu__link">Contact us</a></li>
 				</ul>
+				<button class="button main-menu__more-btn">...</ul></button>
+				<ul class="drop-down-menu main-menu__more-list">
 			</nav>
 		</header>
 

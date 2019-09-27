@@ -46,20 +46,85 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 	showbtnToUp();
 
-	showbtnToUp = throttle(showbtnToUp, 500);
+	showbtnToUp = throttle(showbtnToUp, 100);
 
 	window.addEventListener('scroll', () => showbtnToUp());
 	// ================================================
 
-	setColors(document.body.querySelector('.main-menu').children);
+	// main menu
+	const mainMenu = document.body.querySelector('.main-menu');
+	const mainMenuList = mainMenu.querySelector('.main-menu__list');
+	const heightMainMenu = mainMenuList.querySelector('.main-menu__item').clientHeight;
+	setColors(mainMenuList.children);
+
+	const moreBtn = mainMenu.querySelector('.main-menu__more-btn');
+	const moreMenu = mainMenu.querySelector('.main-menu__more-list');
+	moreBtn.onclick = function() {
+		moreMenu.classList.toggle('visible');
+	}
+
+	document.addEventListener('click', function(e) {
+		if (!mainMenu.contains(e.target) && moreMenu.classList.contains('visible'))
+			moreMenu.classList.remove('visible');
+	})
+	document.addEventListener('keydown', () => {
+		if (event.key == 'Escape' && moreMenu.classList.contains('visible'))
+			moreMenu.classList.remove('visible');
+	});
+
+	function setMoreMenu() {
+		function wrap() {
+			if (mainMenuList.clientHeight > heightMainMenu) {
+				if (!moreBtn.classList.contains('visible')) {
+					moreBtn.classList.add('visible');
+				}
+				moreMenu.prepend(mainMenuList.lastElementChild);
+				if (mainMenuList.clientHeight > heightMainMenu) wrap();
+			} else if (moreMenu.children.length) {
+				mainMenuList.append(moreMenu.firstElementChild);
+				wrap();
+			}  
+			if (!moreMenu.children.length) {
+				moreMenu.classList.remove('visible');
+				moreBtn.classList.remove('visible');
+			}
+		}
+		wrap();
+	}
+	setMoreMenu();
+
+	setMoreMenu = debounce(setMoreMenu, 500);
+
+	window.addEventListener('resize', function() {
+		setMoreMenu();
+
+	});
+
+	// ================================================
 
 	// sign-in__button
 	const sectionLogin = document.body.querySelector('.auth');
 	if (sectionLogin) {
+
+		const passWrap = sectionLogin.querySelectorAll('.wrap-password');
+		for (let i = 0; i < passWrap.length; ++i) {
+			passWrap[i].onclick = function(e) {
+				if (e.target.classList.contains('show-pass')) {
+					const inputs = this.getElementsByTagName('input');
+					e.target.classList.toggle('hidePass');
+					for (let i = 0; i < inputs.length; ++i) {
+						let type = inputs[i].type == 'text' ? 'password' : 'text';
+						inputs[i].setAttribute('type', type);
+					}
+				}
+			}
+		}
+
 		const signIn = document.body.querySelector('.sign-in__button');
+		signIn.onclick = showSignIn;
+		
 		const sectionLoginCloseButton = sectionLogin.querySelector('.auth__close-button');
 		sectionLoginCloseButton.onclick = hideSignIn;
-		signIn.onclick = showSignIn;
 
 		function showSignIn() {
 			scrim.style.zIndex = '6';
@@ -75,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			sectionLogin.hidden = true;
 			scrimKey = '';
 		}
-		
 		const sectionLoginSignIn = sectionLogin.querySelector('.auth__sign-in');
 		const sectionLoginSignUp = sectionLogin.querySelector('.auth__sign-up');
 		const formSignIn = sectionLogin.querySelector('.form-sign-in');
@@ -85,17 +149,14 @@ document.addEventListener("DOMContentLoaded", () => {
 			if (!this.classList.contains('auth__active')) {
 				sectionLoginSignIn.classList.toggle('auth__active');
 				sectionLoginSignUp.classList.toggle('auth__active');
-				// this.classList.add('auth__active');
 
 				formSignIn.classList.toggle('visible');
 				formSignUp.classList.toggle('visible');
-
-				// formSignIn.style.display = getComputedStyle(formSignIn).display == 'none' ? 'block' : 'none';
-				// formSignUp.style.display = getComputedStyle(formSignUp).display == 'none' ? 'block' : 'none';
 			}
 		}
 
 		sectionLoginSignIn.onclick = sectionLoginSignUp.onclick = changeLogin;
+		formSignIn.querySelector('form').onsubmit = formSubmit;
 	}
 	// ================================================
 
@@ -205,7 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		calculateGeometryImgGallery(galleryList);
 		
-		calculateGeometryImgGallery = throttle(calculateGeometryImgGallery, 1000);
+		calculateGeometryImgGallery = debounce(calculateGeometryImgGallery, 1000);
 		
 		for (let i = 0; i < galleryList.length; i++) {
 			let currentImg = galleryList[i].parentElement.querySelector('.gallery__current-img');
@@ -219,9 +280,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		}
 		
-		window.addEventListener('resize', () => {
+		window.addEventListener('resize', function () {
 			if (window.innerWidth < 1100)	calculateGeometryImgGallery(galleryList);
-		})
+		});
 	}
 	//===============================================
 
@@ -275,7 +336,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	function resetSidebar()  {
 		if (scrimKey == 'sidebar') hideSidebar();
-		setTimeout(() => calculateGeometryImgGallery(galleryList), 400);
 	}
 	
 	resetSidebar = throttle(resetSidebar, 200);
@@ -324,6 +384,45 @@ function throttle(f, ms) {
 	}
 }
 
+function debounce(f, ms) {
+	var timerId = 0;
+ 
+	return function() {
+	  var saveThis = this;
+	  var args = arguments;
+ 
+	  if (timerId) {
+		 clearTimeout(timerId);
+	  }
+ 
+	  timerId = setTimeout(function() {
+		 f.apply(saveThis, args);
+		 timerId = 0;
+	  }, ms);
+	};
+ }
+
+
+ function createNotice(message, time = 15000) {
+	let oldNotice = document.body.querySelector('.notice-message');
+	if (oldNotice) {
+		oldNotice.remove();
+		clearTimeout(createNotice.idTimer);
+	} 
+	notice = document.createElement('div');
+	notice.className = 'notice-message';
+	notice.innerHTML = message;
+	noticeClose = document.createElement('span');
+	noticeClose.className = 'close-button notice-close';
+	noticeClose.onclick = function() {
+		this.parentElement.remove();
+	}
+	notice.append(noticeClose);
+	document.body.prepend(notice);
+	createNotice.idTimer = setTimeout(() => notice.remove(), time);
+}
+createNotice('Error Message Test. Will close after 5 seconds.', 5000);
+
 function setColors(elemList, byName) {
 	const colors = [
 		'#00aedb', // blue
@@ -360,6 +459,48 @@ function setColors(elemList, byName) {
 		}	
 
 	}
+}
+
+function formSubmit(e) {
+	e.preventDefault();
+	fetch('checksignin.php', {
+		method: 'POST',
+		body: new FormData(this)
+	}).then(response => {
+			if (response.ok) return response.text();
+		}).then(result => {
+			if (result) createNotice(result);
+			else this.submit();
+	}).catch(error => console.error(error));
+}
+
+function checkEmail(input) {
+	if (input.value == '') return;
+
+	fetch('checkemail.php', {
+		method: 'POST',
+		body: 'email=' + input.value,
+		headers: { "Content-Type": "application/x-www-form-urlencoded" }
+	}).then(response => {
+			if (response.ok) return response.text();
+		}).then(result => {
+			const parent = input.parentElement.parentElement;
+			if (result) {
+				input.style.outline = "2px solid #f00";
+				parent.classList.add('input-invalid');
+				parent.classList.remove('input-valid');
+				parent.querySelector('.input-text-error').innerHTML = result;
+			} else {
+				input.style.outline = "2px solid #00D961";
+				parent.classList.add('input-valid');
+				parent.classList.remove('input-invalid');
+				parent.querySelector('.input-text-error').innerHTML = '';
+			}
+		}).catch(error => console.error(error));
+}
+
+function checkPasswords() {
+	
 }
 
 // let oldScroll = document.documentElement.scrollTop;
