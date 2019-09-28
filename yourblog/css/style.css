@@ -259,7 +259,7 @@ body {
    top: 60px;
    right: 0;
    min-width: 230px;
-   z-index: 3;
+   z-index: 5;
    display: none;
    padding-bottom: 5px;
    list-style: none;

@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 	setMoreMenu();
 
-	setMoreMenu = debounce(setMoreMenu, 500);
+	// setMoreMenu = debounce(setMoreMenu, 500);
 
 	window.addEventListener('resize', function() {
 		setMoreMenu();
@@ -400,28 +400,31 @@ function debounce(f, ms) {
 		 timerId = 0;
 	  }, ms);
 	};
- }
+}
 
-
- function createNotice(message, time = 15000) {
-	let oldNotice = document.body.querySelector('.notice-message');
-	if (oldNotice) {
-		oldNotice.remove();
-		clearTimeout(createNotice.idTimer);
-	} 
-	notice = document.createElement('div');
+function createNotice(message, time) {
+	const noticesBlock = document.body.querySelector('.notices');
+	let idTimer = 0;
+	let notice = document.createElement('div');
 	notice.className = 'notice-message';
 	notice.innerHTML = message;
 	noticeClose = document.createElement('span');
 	noticeClose.className = 'close-button notice-close';
 	noticeClose.onclick = function() {
-		this.parentElement.remove();
+		notice.remove();
+		if (idTimer) clearTimeout(idTimer);
 	}
 	notice.append(noticeClose);
-	document.body.prepend(notice);
-	createNotice.idTimer = setTimeout(() => notice.remove(), time);
+	noticesBlock.append(notice);
+	setTimeout(() => {notice.style.transform = 'scaleY(1)'});
+
+	if (time) {
+		idTimer = setTimeout(() => {
+			notice.style.transform = '';
+			setTimeout(() => notice.remove(), 200);
+		}, time);
+	}
 }
-createNotice('Error Message Test. Will close after 5 seconds.', 5000);
 
 function setColors(elemList, byName) {
 	const colors = [
@@ -499,10 +502,7 @@ function checkEmail(input) {
 		}).catch(error => console.error(error));
 }
 
-function checkPasswords() {
-	
-}
-
+// check scroll up/down
 // let oldScroll = document.documentElement.scrollTop;
 // window.addEventListener('scroll', function(){
 // 	let newScroll = document.documentElement.scrollTop;

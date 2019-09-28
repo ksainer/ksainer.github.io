@@ -160,17 +160,26 @@
 .hidePass {
    background-image: url(../img/eye-close.svg);
 }
-.notice-message {
+
+.notices {
    position: fixed;
    top: 0;
    left: 0;
+   width: 100%;
+   z-index: 100;
+}
+.notice-message {
+   position: relative;
    width: 100%;
    padding: 20px 50px 20px 0;
    background-color: #f77;
    text-align: center;
    color: #fff;
    font-size: 20px;
-   z-index: 100;
+   transform: scaleY(0);
+   transform-origin: top;
+   transition: transform .2s;
+   border: 1px solid #EC5656;
 }
 .notice-close {
    right: 10px;

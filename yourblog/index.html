@@ -20,6 +20,8 @@
 		<div class="line line4"></div>
 		<div class="line line5"></div>
 	</div>
+	<div class="scrim" hidden></div>
+	<div class="notices"></div>
 	<div class="wrapper">
 
 		<header class="header">
@@ -621,10 +623,12 @@
 
 	<button class="nav-button button-to-up" style="transform: scaleY(0)"></button>
 	
-	<div class="scrim" hidden></div>
-	
 	<script src="js/main.min.js"></script>
-	
+	<script>
+		createNotice('Hello Everyone!', 3000);
+		setTimeout(() => createNotice('This is my first web-site!', 5000), 3500);
+		setTimeout(() => createNotice('And If you notice any bug, please report it to me at <a href="mailto:ksainer@mail.ru" style="color: #fff; font-weight: bold;">ksainer@mail.ru</a>.'), 9000);
+	</script>
 </body>
 
 </html>
