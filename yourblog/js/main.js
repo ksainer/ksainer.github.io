@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 	setMoreMenu();
 
-	// setMoreMenu = debounce(setMoreMenu, 500);
+	setMoreMenu = debounce(setMoreMenu, 500);
 
 	window.addEventListener('resize', function() {
 		setMoreMenu();
@@ -358,8 +358,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// hot keys
 	document.addEventListener('keydown', (event) => {
+		console.log(event.key, event.keyCode);
 		if (event.key == 'Escape' && !scrim.hidden) scrim.click();
 	});
+
+	window.addEventListener('popstate', (e) => {
+		event.preventDefault();
+		scrim.click();
+		alert('check');
+	}, false)
 	// ==============================================
 });
 
