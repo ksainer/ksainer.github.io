@@ -14,9 +14,11 @@
 			<h3 class="banner__title">Вам подарок</h3>
 			<div class="banner__shadow"></div>
 			<img src="present.png" alt="gift" class="banner__img">
-			<input type="text" class="banner__plus" value="+7 " readonly>
-			<input type="tel" class="banner__tel" placeholder="923 00 00" pattern="/^\d\d\d\s\d\d\s\d\d$/">
-			<button class="banner__button">Активировать скидку</button>
+			<form action="/">
+				<input type="text" class="banner__plus" value="+7 " readonly>
+				<input type="tel" class="banner__tel" placeholder="923 00 00" pattern="/^\d\d\d\s\d\d\s\d\d$/" name="tel">
+				<button class="banner__button" type="button" onclick="alert('Click the button.')">Активировать скидку</button>
+			</form>
 		</div>
 	</div>
 
