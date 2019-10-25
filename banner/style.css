@@ -87,13 +87,23 @@
 
 .banner__confetti {
 	position: absolute;
-	border-radius: 50%;
-	top: -15px;
-	width: 15px;
-	height: 15px;
-	background-color: #e3caa6;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 200%;
 	z-index: 0;
-	animation: confetti 3s linear infinite;
+	background: url(layer-1.png);
+	animation: layer1 2s linear infinite;
+}
+
+.banner__confetti:nth-child(1) {
+	background: url(layer-2.png);
+	animation-duration: 3s;
+}
+
+.banner__confetti:nth-child(2) {
+	background: url(layer-3.png);
+	animation-duration: 4s; 
 }
 
 @keyframes present {
@@ -133,11 +143,11 @@
 	}
 }
 
-@keyframes confetti {
+@keyframes layer1 {
 	0% {
-		transform: translateY(0);
+		transform: translateY(-50%);
 	}
-	100%{
-		transform: translateY(500px);
+	100% {
+		transform: translateY(0%);
 	}
 }
