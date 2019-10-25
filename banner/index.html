@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Banner</title>
 	<link rel="stylesheet" href="style.css">
 </head>
@@ -13,7 +15,7 @@
 			<div class="banner__shadow"></div>
 			<img src="present.png" alt="gift" class="banner__img">
 			<input type="text" class="banner__plus" value="+7 " readonly>
-			<input type="tel" class="banner__tel" placeholder="923 00 00">
+			<input type="tel" class="banner__tel" placeholder="923 00 00" pattern="/^\d\d\d\s\d\d\s\d\d$/">
 			<button class="banner__button">Активировать скидку</button>
 		</div>
 	</div>
