@@ -191,7 +191,7 @@ body {
 
 .skills::after {
 	padding: 0 8px 0 8px;
-	background-position: 0 -102px;
+	background-position: 0 -103px;
 }
 .skills__lists {
 	display: flex;
@@ -269,7 +269,7 @@ body {
 
 .portfolio::after {
 	padding: 0 8px 0 8px;
-	background-position: 0 -136px;
+	background-position: 0 -138px;
 }
 
 .portfolio__list {
