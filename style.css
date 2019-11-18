@@ -83,14 +83,15 @@ body {
 .title__icon::after {
 	content: '';
 	position: absolute;
-	top: 14px;
+	top: 9px;
 	left: 0;
 	width: 50px;
-	height: 34px;
+	height: 39px;
 	padding: 0 4px 0 12px;
 	background: #0c3747 url('img/sprite-title.png') center no-repeat;
 	background-size: cover;
 	background-origin: content-box;
+	border-bottom: 5px solid #0c3747;
 	z-index: 2;
 }
 
@@ -103,10 +104,10 @@ body {
 .block-data::before {
 	content: '';
 	position: absolute;
-	top: 8px;
+	top: 5px;
 	left: 0px;
 	width: 40px;
-	height: 30px;
+	height: 33px;
 	padding: 0 5px;
 	background: #eee url('img/sprite-title.png') 0 0 no-repeat;
 	background-size: cover;
@@ -260,10 +261,10 @@ body {
 	padding-right: 40px;
 }
 .php::after {
-	padding-right: 110px;
+	padding-right: 75px;
 }
 .mysql::after {
-	padding-right: 100px;
+	padding-right: 85px;
 }
 
 .portfolio::after {
@@ -301,8 +302,28 @@ body {
 	transform: scale(1.05);
 }
 
-.portfolio__note {
+.portfolio__languages {
 	font-style: italic;
+	margin-bottom: 3px;
+}
+
+.portfolio__note-list {
+	margin-left: 30px;
+	list-style: none;
+}
+
+.portfolio__note-list li {
+	position: relative;
+	margin-bottom: 7px;
+}
+
+.portfolio__note-list li:before {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: -20px;
+	border: 8px solid transparent;
+	border-left-color: #0a546f;
 }
 
 .footer {

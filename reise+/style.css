@@ -1,5 +1,4 @@
 * {
-	/*outline: 1px dashed orange;*/
 	margin: 0;
 	text-decoration: none;
 	color: #000;
@@ -7,7 +6,7 @@
 }
 
 *:focus {
-	outline: 3px dashed darkorange;
+	outline: 2px solid rgba(230,77,82, 0.7);
 }
 
 body {
@@ -24,23 +23,28 @@ body {
 }
 
 .button {
-	background: url(img/button.png) center no-repeat;
+	background: #d71e24 url(img/button.png) center no-repeat;
 	background-size: cover; 
 	border-radius: 10px;
 	min-height: 53px;
 	padding: 5px 10px;
 	cursor: pointer;
 	border: none;
+	outline: none;
 }
-.button:hover {
-	transition: .3s;
-	filter: hue-rotate(25deg);
+
+.button:hover,
+.button:focus{
+	border-bottom: 2px solid #88161b;
+	border-right: 2px solid #88161b;
 }
+
 .button:active {
-	transition: 0s;
-	box-shadow: inset 5px 5px 5px rgba(100,100,100,0.7),
-				inset -5px -5px 5px rgba(100,100,100,0.7);
+	border: none;
+	border-top: 2px solid #88161b;
+	border-left: 2px solid #88161b;
 }
+
 .button__text {
 	word-wrap: break-word;
 	font-family: Cambria, Georgia, serif;
