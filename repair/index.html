@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>IC "Repair Design Project"</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Yeseva+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/all.min.css">
+</head>
+
+<body>
+	<section class="home" id="#home">
+		<header class="header p-l p-r">
+			<div class="logo yellow">IC "Repair Design Project"</div>
+			<nav>
+				<ul class="main-menu">
+					<li class="main-menu__item"><a href="#home" class="main-menu__link">Home</a></li>
+					<li class="main-menu__item"><a href="#projects" class="main-menu__link">Projects</a></li>
+					<li class="main-menu__item"><a href="#measurement" class="main-menu__link">Measurement</a></li>
+					<li class="main-menu__item"><a href="#team" class="main-menu__link">Team</a></li>
+					<li class="main-menu__item"><a href="#reviews" class="main-menu__link">Reviews</a></li>
+					<li class="main-menu__item"><a href="#contacts" class="main-menu__link">Contacts</a></li>
+				</ul>
+			</nav>
+			<div class="request-call">
+				<a href="tel:+79991112233" class="request-call__phone yellow">+7 (999) 111-22-33</a>
+				<button class="button request-call__button">Request a call
+				</button>
+			</div>
+		</header>
+		<div class="home__content m-l">
+			<h1 class="home__title">Turnkey Repair in the city of <span class="yellow">Rostov-on-Don</span></h1>
+			<p class="home__text">
+				Get ready-made turnkey repairs on time
+				with work time saving up to 45 days and 20% from
+				cost of materials due to the organization of work
+			</p>
+			<div class="home__buttuns">
+				<button class="home__calc-button button">Calculate the cost</button>
+				<button class="home__submit-button button">Submit your application</button>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects m-l" id="projects">
+		<div class="projects__title-block">
+			<h2 class="projects__title yellow">Completed projects</h2>
+			<p class="projects__text">Only a small part of the work performed by our company is presented on the site. For 14 years on in the construction 
+				market we have made happy more than 1000 families</p>
+		</div>
+		<div class="projects__slider slider">
+			<ul class="slider__data-list">
+				<li class="slider__data-item">
+					<h4 class="slider__data-name yellow">City:</h4>
+					<p class="slider__data-value">Rostov-on-Don<br>LCD admiral</p>
+				</li>
+				<li class="slider__data-item">
+					<h4 class="slider__data-name yellow">Apartment area:</h4>
+					<p class="slider__data-value">81 m<sup>2</sup></p>
+				</li>
+				<li class="slider__data-item">
+					<h4 class="slider__data-name yellow">Repair time:</h4>
+					<p class="slider__data-value">3.5 months</p>
+				</li>
+				<li class="slider__data-item">
+					<h4 class="slider__data-name yellow">Repair Cost:</h4>
+					<p class="slider__data-value">Upon request</p>
+				</li>
+			</ul>
+			
+			<div class="slider__right-group">
+				<ul class="slider__city-list">
+					<li class="slider__city slider__city-active">Rostov-on-Don, Admiral</li>
+					<li class="slider__city">Sochi Thieves</li>
+					<li class="slider__city">Rostov-on-Don Patriotic</li>
+				</ul>
+
+				<div class="slider__wrap">
+					<button class="slider__button slider__prev-button"></button>
+					<ul class="slider__list">
+						<li class="slider__item"><img src="img/slider-1.jpg" alt="slider 1"></li>
+						<li class="slider__item"><img src="img/slider-2.jpg" alt="slider 2"></li>
+					</ul>
+					<button class="slider__button slider__next-button"></button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="online-control p-r p-l">
+		<div class="online-control__ico-title ico-title">
+			<h3 class="ico-title__name">Online control</h3>
+			<div class="ico-title__icon">
+				<svg width="34" height="29">
+					<use xlink:href="img/sprite.svg#online-control"></use>
+				</svg>
+			</div>
+		</div>
+		<div class="online-control__video">
+			<video class="online-control__player" poster="img/vldeo.jpg" src="https://www.youtube.com/watch?v=Y8Q9ptCXzL0"></video>
+		</div>
+		<p class="online-control__text">
+			At each facility, a camera is installed that broadcasts the progress of work on the clock.
+			At any time, you can go to our website and monitor the progress of work in your
+			apartment. You can watch the live broadcast from one of our facilities!
+			Leave a request below and you will receive a link to the broadcast.
+		</p>
+		<div class="online-control__leave-contacts">
+			<div class="online-control__input-group">
+				<div class="online-control__input-group-header">
+					<div class="online-control__input-wrap input-wrap">
+						<input type="text" class="online-control__input input" placeholder=" ">
+						<div class="online-control__placeholder input__placeholder">What is your name:</div>
+					</div>
+					<div class="online-control__input-wrap input-wrap">
+						<input type="text" class="online-control__input input" placeholder=" ">
+						<div class="online-control__placeholder input__placeholder">Your phone number:</div>
+					</div>
+				</div>
+				<label class="online-control__agree checkbox">
+					<input type="checkbox" class="checkbox__input" checked>
+					<span class="checkbox__text">I agree to the processing of personal data</span>
+				</label>
+			</div>
+			<button class="online-control__submit button">Submit</button>
+		</div>
+	</section>
+
+	<section class="types p-l p-r">
+		<div class="types__ico-title ico-title">
+			<h3 class="ico-title__name">Types of repair</h3>
+			<div class="ico-title__icon">
+				<svg width="28" height="28">
+					<use xlink:href="img/sprite.svg#types"></use>
+				</svg>
+			</div>
+		</div>
+		<ul class="cards">
+			<li class="cards__item">
+				<div class="cards__wrap">
+					<h4 class="cards__title">Redecorating</h4>
+					<ul class="cards__list">
+						<li>Dismantling of old coatings</li>
+						<li>Wallpapering</li>
+						<li>Painting walls and ceilings</li>
+						<li>Laying flooring</li>
+						<li>Replacing plumbing</li>
+						<li>Replacing sockets and switches</li>
+						<li>Replacing doors</li>
+					</ul>
+					<button class="cards__button button">from 900 rub / m<sup>2</sup></button>
+				</div>
+			</li>
+			<li class="cards__item">
+				<div class="cards__wrap">
+					<h4 class="cards__title">Designer Repair</h4>
+					<ul class="cards__list">
+						<li>Dismantling of old coatings</li>
+						<li>Wallpapering</li>
+						<li>Painting walls and ceilings</li>
+						<li>Laying flooring</li>
+						<li>Replacing plumbing</li>
+						<li>Replacing sockets and switches</li>
+						<li>Replacing doors</li>
+					</ul>
+					<button class="cards__button button">from 1800 rub / m<sup>2</sup></button>
+				</div>
+			</li>
+			<li class="cards__item">
+				<div class="cards__wrap">
+					<h4 class="cards__title">Overhaul</h4>
+					<ul class="cards__list">
+						<li>Dismantling of old coatings</li>
+						<li>Wallpapering</li>
+						<li>Painting walls and ceilings</li>
+						<li>Laying flooring</li>
+						<li>Replacing plumbing</li>
+						<li>Replacing sockets and switches</li>
+						<li>Replacing doors</li>
+					</ul>
+					<button class="cards__button button">from 4000 rub / m<sup>2</sup></button>
+				</div>
+			</li>
+		</ul>
+	</section>
+
+	<section class="call-measurer p-r">
+		<div class="call-measurer__left-column">
+			<ul class="call-measurer__point-list">
+				<li class="call-measurer__point" data-num="01">Our specialist will arrive for measurements per day<br>contact, or appoint a date convenient for you</li>
+				<li class="call-measurer__point" data-num="02">Free metering</li>
+				<li class="call-measurer__point" data-num="03">Free consultation</li>
+				<li class="call-measurer__point" data-num="04">Get a cost estimate and<br>the timing of your future repairs</li>
+			</ul>
+		</div>
+		<div class="call-measurer__form-wrap">
+			<form class="call-measurer__call-form call-form">
+				<h4 class="call-form__title">Leave a request for free	departure of the measurer</h4>
+				<div class="call-form__input-wrap input-wrap">
+					<input type="text" class="call-form__input input" placeholder=" ">
+					<div class="input__placeholder">What is your name:</div>
+				</div>
+				<div class="call-form__input-wrap input-wrap">
+					<input type="text" class="call-form__input input"  placeholder=" ">
+					<div class="input__placeholder">Your phone number:</div>
+				</div>
+				<div class="call-form__input-wrap input-wrap">
+					<input type="text" class="call-form__input input" placeholder=" ">
+					<div class="input__placeholder">Your email:</div>
+				</div>
+				<label class="call-form__checkbox checkbox">
+					<input type="checkbox" class="checkbox__input" checked>
+					<span class="checkbox__text">I agree to the processing of personal data</span>
+				</label>
+				<button class="call-form__button button">Call the measurer</button>
+			</form>
+			<div class="call-measurer__discount discount">
+				<div class="discount__label">
+					<svg width="41" height="35">
+						<use xlink:href="img/sprite.svg#discount-pig"></use>
+					</svg>
+				</div>
+				<span class="discount__text">Help save 10 - 20% of the<br>cost of materials</span>
+			</div>
+		</div>
+	</section>
+
+	<section class="fantasies p-r p-l">
+		<div class="fantasies__left-column">
+			<h2 class="fantasies__title yellow">We realize your wildest fantasies</h2>
+			<ul class="fantasies__list">
+				<li class="fantasies__item"><label><input type="radio" name='type' class="fantasies__item-radio" checked><span class="fantasies__item-text">American classic</span></label></li>
+				<li class="fantasies__item"><label><input type="radio" name='type' class="fantasies__item-radio"><span class="fantasies__item-text">Empire</span></label></li>
+				<li class="fantasies__item"><label><input type="radio" name='type' class="fantasies__item-radio"><span class="fantasies__item-text">Classical</span></label></li>
+				<li class="fantasies__item"><label><input type="radio" name='type' class="fantasies__item-radio"><span class="fantasies__item-text">Loft</span></label></li>
+				<li class="fantasies__item"><label><input type="radio" name='type' class="fantasies__item-radio"><span class="fantasies__item-text">Minimalism</span></label></li>
+				<li class="fantasies__item"><label><input type="radio" name='type' class="fantasies__item-radio"><span class="fantasies__item-text">Provence</span></label></li>
+				<li class="fantasies__item"><label><input type="radio" name='type' class="fantasies__item-radio"><span class="fantasies__item-text">Romanticism</span></label></li>
+				<li class="fantasies__item"><label><input type="radio" name='type' class="fantasies__item-radio"><span class="fantasies__item-text">Scandinavian style</span></label></li>
+				<li class="fantasies__item"><label><input type="radio" name='type' class="fantasies__item-radio"><span class="fantasies__item-text">Mediterranean style</span></label></li>
+				<li class="fantasies__item"><label><input type="radio" name='type' class="fantasies__item-radio"><span class="fantasies__item-text">High tech</span></label></li>
+				<li class="fantasies__item"><label><input type="radio" name='type' class="fantasies__item-radio"><span class="fantasies__item-text">Eclecticism</span></label></li>
+			</ul>
+		</div>
+		<div class="fantasies__images">
+			<div class="fantasies__images-column">
+				<img src="img/fantasies-1.jpg" alt="americal classic design" class="fantasies__img">
+				<img src="img/fantasies-2.jpg" alt="americal classic design" class="fantasies__img">
+			</div>
+			<div class="fantasies__images-column">
+				<img src="img/fantasies-3.jpg" alt="americal classic design" class="fantasies__img">
+				<img src="img/fantasies-4.jpg" alt="americal classic design" class="fantasies__img">
+			</div>
+		</div>
+	</section>
+
+	<section class="design-project p-r p-l">
+		<div class="ico-title">
+			<h3 class="ico-title__name">Design project</h3>
+			<div class="ico-title__icon">
+				<svg width="28" height="29">
+					<use xlink:href="img/sprite.svg#design-project"></use>
+				</svg>
+			</div>
+			<p class="design-project__text ico-title__text">
+				Design project not only helps to make the repair of your apartment more modern,
+				but also significantly reduces the cost of materials and reduces the time of repair work.
+			</p>
+		</div>
+		<ul class="cards">
+			<li class="cards__item">
+				<div class="cards__wrap">
+					<h4 class="cards__title">Mini</h4>
+					<ul class="cards__list">
+						<li>Measurement drawing</li>
+						<li>Redevelopment</li>
+						<li>Layout of furniture</li>
+						<li>Plumbing plan. equipment</li>
+					</ul>
+					<button class="cards__button button">from 900 rub / m<sup>2</sup></button>
+				</div>
+			</li>
+			<li class="cards__item">
+				<div class="cards__wrap">
+					<h4 class="cards__title">Standard</h4>
+					<ul class="cards__list">
+						<li>Measurement drawing</li>
+						<li>Redevelopment</li>
+						<li>Layout of furniture</li>
+						<li>Plan of ceilings</li>
+						<li>Floor Plan</li>
+						<li>Electricians plan</li>
+						<li>Lighting plan</li>
+					</ul>
+					<button class="cards__button button">from 1800 rub / m<sup>2</sup></button>
+				</div>
+			</li>
+			<li class="cards__item">
+				<div class="cards__wrap">
+					<h4 class="cards__title">Full</h4>
+					<ul class="cards__list">
+						<li>Measurement drawing</li>
+						<li>Redevelopment</li>
+						<li>Layout of furniture</li>
+						<li>Plan of ceilings</li>
+						<li>Floor Plan</li>
+						<li>Electricians plan</li>
+						<li>Lighting plan</li>
+						<li>Wall reamers</li>
+						<li>3D visualization</li>
+						<li>Bill of materials</li>
+						<li>Departure for a selection of materials</li>
+						<li>Furniture selection</li>
+					</ul>
+					<button class="cards__button button">from 4000 rub / m<sup>2</sup></button>
+				</div>
+			</li>
+		</ul>
+	</section>
+
+	<section class="steps p-r p-l">
+		<div class="steps__left-column">
+			<p class="steps__how">How we are working</p>
+			<h2 class="steps__title yellow">6 steps to the goal</h2>
+			<div class="steps__description">
+				<h4 class="steps__name yellow">Departure for measurements premises</h4>
+				<div>
+					<p class="steps__text">After your call, we go to you to consult and measure the premises of your apartment. During our meeting, you can ask absolutely any number of questions. An appraiser-appraiser leaves to measure the room.</p>
+					<p class="steps__text">He will advise you on the issues of repair technology, apartment design, terms of repair of the apartment as a whole and its individual stages.</p>
+				</div>
+			</div>
+		</div>
+		<div class="slider2">
+			<ul class="slider2__points">
+				<li class="slider2__item slider2__item-active">
+					<span class="slider2__num">01</span>
+					<p class="slider2__name">Departure to room measurements</p>
+				</li>
+				<li class="slider2__item">
+					<span class="slider2__num">02</span>
+					<p class="slider2__name">Compilation estimates</p>
+				</li>
+				<li class="slider2__item">
+					<span class="slider2__num">03</span>
+					<p class="slider2__name">Development project design</p>
+				</li>
+			</ul>
+			<ul class="slider2__points">
+				<li class="slider2__item">
+					<span class="slider2__num">04</span>
+					<p class="slider2__name">Purchasing Supplies</p>
+				</li>
+				<li class="slider2__item">
+					<span class="slider2__num">05</span>
+					<p class="slider2__name">Repair finishing work</p>
+				</li>
+				<li class="slider2__item">
+					<span class="slider2__num">06</span>
+					<p class="slider2__name">Acceptance of work</p>
+				</li>
+			</ul>
+			<ul class="slider2__images">
+				<li class="slider2__img-item"><img src="img/slider2-1.jpg" alt="slider pic" class="slider2__img"></li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="team p-l p-r">
+		<div class="ico-title">
+			<h3 class="ico-title__name">Our team</h3>
+			<div class="ico-title__icon">
+				<svg width="29" height="29">
+					<use xlink:href="img/sprite.svg#team"></use>
+				</svg>
+			</div>
+			<p class="team__title-text ico-title__text">
+				Our team has helped to become happier for more than
+				500 families and we are not going to stop
+			</p>
+		</div>
+
+		<ul class="team__list">
+			<li class="person">
+				<div class="person__icon">
+					<svg width="44" height="44">
+						<use xlink:href="img/sprite.svg#idea"></use>
+					</svg>
+				</div>
+				<img src="img/team-1.jpg" alt="team person" class="person__photo">
+				<div class="person__data">
+					<h4 class="person__name">Dmitry Tulyakov</h4>
+					<p class="person__position">Project manager</p>
+					<p class="person__experience">Work experience 8 years</p>
+				</div>
+			</li>
+			<li class="person">
+				<div class="person__icon">
+					<svg width="43" height="44">
+						<use xlink:href="img/sprite.svg#designer"></use>
+					</svg>
+				</div>
+				<img src="img/team-2.jpg" alt="team person" class="person__photo">
+				<div class="person__data">
+					<h4 class="person__name">Larisa Kotlyarova</h4>
+					<p class="person__position">Designer</p>
+					<p class="person__experience">Work experience 6 years</p>
+				</div>
+			</li>
+			<li class="person">
+				<div class="person__icon">
+					<svg width="44" height="44">
+						<use xlink:href="img/sprite.svg#foreman"></use>
+					</svg>
+				</div>
+				<img src="img/team-3.jpg" alt="team person" class="person__photo">
+				<div class="person__data">
+					<h4 class="person__name">Alexey Efimov</h4>
+					<p class="person__position">Foreman</p>
+					<p class="person__experience">Work experience 12 years</p>
+				</div>
+			</li>
+		</ul>
+
+		<p class="team__text">Each employee of our company is a qualified full-time specialist with work experience of 6 years.<br>
+			We do not have laborers and guest workers, each employee carries out work corresponding to his specialty.</p>
+	</section>
+
+	<section class="clients p-l p-r">
+		<div class="ico-title">
+			<h3 class="ico-title__name">Our clients</h3>
+			<div class="ico-title__icon">
+				<svg width="34" height="30" >
+					<use xlink:href="img/sprite.svg#clients"></use>
+				</svg>
+			</div>
+			<p class="clients__title-text ico-title__text">
+				80% of our customers recommend us to their friends and family.
+			</p>
+		</div>
+		<ul class="clients__list">
+			<li class="client-card">
+				<header class="client-card__header">
+					<img src="img/client-1.jpg" alt="client photo" class="client-card__photo">
+					<p class="client-card__name">Fedosova Maria Konstantinovna</p>
+				</header>
+				<p class="client-card__text">
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta voluptatum facere rem voluptate iste aspernatur quasi commodi ut expedita, nobis eos dolorem, dolor placeat dolorum quaerat id beatae accusantium non doloribus ipsa reiciendis, cupiditate fugiat vel. Laborum iure quidem soluta accusantium nesciunt in distinctio eum necessitatibus nam sequi quas temporibus quia nobis facere doloribus neque nemo voluptates sint porro ipsum, corporis earum dolor nisi praesentium. Fugit, deleniti tempore reprehenderit illo maxime ut harum quam deserunt ipsum? Aperiam, enim eum facere officiis id, est quaerat deserunt corrupti recusandae atque natus consectetur nostrum esse quod exercitationem molestias similique dolores magni perferendis corporis.
+				</p>
+				<div class="client-card__data">
+					<div>
+						<svg width="34" height="33">
+							<use xlink:href="img/sprite.svg#square"></use>
+						</svg>
+						40 m<sup>2</sup>
+					</div>
+					<div>
+						<svg width="33" height="33">
+							<use xlink:href="img/sprite.svg#calendar"></use>
+						</svg>
+						48 days
+					</div>
+				</div>
+			</li>
+			<li class="client-card">
+				<header class="client-card__header">
+					<img src="img/client-2.jpg" alt="client photo" class="client-card__photo">
+					<p class="client-card__name">Afanasyev Sergey Alexandrovich</p>
+				</header>
+				<p class="client-card__text">
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et laudantium saepe impedit porro, culpa pariatur veniam illum repellendus nobis obcaecati, quas consectetur autem magnam! Fugiat sequi voluptas accusantium, sunt minus incidunt architecto ullam quo ratione, qui illum corrupti odio vitae quasi praesentium quibusdam aliquam? Veniam quae pariatur asperiores architecto. Numquam!
+				</p>
+				<div class="client-card__data">
+					<div>
+						<svg width="34" height="33">
+							<use xlink:href="img/sprite.svg#square"></use>
+						</svg>
+						90 m<sup>2</sup>
+					</div>
+					<div>
+						<svg width="33" height="33">
+							<use xlink:href="img/sprite.svg#calendar"></use>
+						</svg>
+						102 days
+					</div>
+				</div>
+			</li>
+			<li class="client-card">
+				<header class="client-card__header">
+					<img src="img/client-3.jpg" alt="client photo" class="client-card__photo">
+					<p class="client-card__name">Kiriev Egor Leonidovich</p>
+				</header>
+				<p class="client-card__text">I want to thank the guys for their work. WE PUT YOUR SHOWER PART IN REPAIR. I am VERY grateful that I referred to the repair as to my own. GREAT THANKS I EXPRESS THE PROJECT TO GEORGIA FOR ITS PROFESSIONALISM AND APPROACH.
+						THE REPAIR PROCESS WAS TURNED OUT IN TERMS, FASTER THAN ANTICIPATED. TEAM MOBILE AND PROFESSIONAL. WORKS PERFORMED QUALITATIVELY WITHOUT COMMENTS. QUALITY SATISFIED. PRICES DEMOCRATIC. I RECOMMEND THESE MASTERS.</p>
+				<div class="client-card__data">
+					<div>
+						<svg width="34" height="33">
+							<use xlink:href="img/sprite.svg#square"></use>
+						</svg>
+						77 m<sup>2</sup>
+					</div>
+					<div>
+						<svg width="33" height="33">
+							<use xlink:href="img/sprite.svg#calendar"></use>
+						</svg>
+						82 days
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+
+	<section class="contacts p-l p-r">
+		<form class="contacts__form-q call-form">
+			<div class="contacts__form-q-wrap">
+				<h4 class="contacts__form-q-title call-form__title">Have any questions?</h4>
+				<div class="contacts__form-q-input-line">
+					<div class="call-form__input-wrap input-wrap">
+						<input type="text" class="call-form__input input" placeholder=" ">
+						<div class="input__placeholder">What is your name:</div>
+					</div>
+					<div class="call-form__input-wrap input-wrap">
+						<input type="text" class="call-form__input input"  placeholder=" ">
+						<div class="input__placeholder">Your phone number:</div>
+					</div>
+				</div>
+				
+				<div class="call-form__input-wrap input-wrap">
+					<input type="text" class="call-form__input input" placeholder=" ">
+					<div class="input__placeholder">Ask your question:</div>
+				</div>
+				<label class="call-form__checkbox checkbox">
+					<input type="checkbox" class="checkbox__input" checked>
+					<span class="checkbox__text">I agree to the processing of personal data</span>
+				</label>
+				<button class="contacts__form-q-button call-form__button button">Ask a question</button>
+			</div>
+		</form>
+
+		<h2 class="contacts__title yellow">
+			Rostov-on-Don, Nansen St., 239 Shopping Center<br>
+			Decorum Tel <a href="tel:+79287683229">+7 (928) 768 32 29</a>
+		</h2>
+		<div class="contacts__icons">
+			<a href="#" class="contacts__icon-link">
+				<svg width="16" height="13">
+					<use xlink:href="img/sprite.svg#mail"></use>
+				</svg>
+			</a>
+			<a href="#" class="contacts__icon-link">
+				<svg width="14" height="15">
+					<use xlink:href="img/sprite.svg#insta"></use>
+				</svg>
+			</a>
+		</div>
+		<div class="contacts__map">
+			<!-- <iframe src="https://yandex.ru/map-widget/v1/-/CGdVqXNH" width="100%" height="100%" allowfullscreen="true"></iframe> -->
+			<img src="img/ya-map.jpg" alt="yandex map" class="contacts__map-img">
+		</div>
+	</section>
+
+	<footer class="footer m-l m-r">
+		<div class="logo yellow">IC "Repair Design Project"</div>
+		<nav>
+			<ul class="main-menu">
+				<li class="main-menu__item"><a href="#home" class="main-menu__link">Home</a></li>
+				<li class="main-menu__item"><a href="#project" class="main-menu__link">Projects</a></li>
+				<li class="main-menu__item"><a href="#Measurement" class="main-menu__link">Measurement</a></li>
+				<li class="main-menu__item"><a href="#Team" class="main-menu__link">Team</a></li>
+				<li class="main-menu__item"><a href="#Reviews" class="main-menu__link">Reviews</a></li>
+				<li class="main-menu__item"><a href="#Contacts" class="main-menu__link">Contacts</a></li>
+			</ul>
+		</nav>
+		<div class="request-call">
+			<a href="tel:+79991112233" class="request-call__phone yellow">+7 (999) 111-22-33</a>
+			<button class="button request-call__button">Request a call
+			</button>
+		</div>
+	</footer>
+	
+	<a href="#" class="instagram-link yellow">Instagram</a>
+	<!-- <script src="js/all.min.js"></script> -->
+</body>
+
+</html>
+
+<!-- Занимаюсь качественной, адаптивной вёрсткой сайтов и спольсзованием таких инструментов и технологий как gulp, sass, БЭМ, LazyLoad и т.д
+Эффективно использую JavaScript и его библиотеки для более лучшего взаимодействия пользователя с сайтом посредством написания новых 
+	или подключения уже готовых плагинов (слайдеров, валидаций форм, ajax-запросов и др)
+Так же могу реализовать серверную часть на языках PHP+SQL (регистрация, приём заявок, отправка эл. писем и многого другого)
+За разрешение опубликовать в моём портфолио ваш сайт + отзыв, могу реализовать проект практически даром! -->
