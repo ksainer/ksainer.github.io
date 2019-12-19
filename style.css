@@ -88,7 +88,7 @@ body {
 	width: 50px;
 	height: 39px;
 	padding: 0 4px 0 12px;
-	background: #0c3747 url('img/sprite-title.png') center no-repeat / 100%;
+	background: #0c3747 url('img/sprite-title.png') no-repeat center / 100%;
 	background-origin: content-box;
 	border-bottom: 5px solid #0c3747;
 	z-index: 2;
@@ -108,7 +108,7 @@ body {
 	width: 40px;
 	height: 33px;
 	padding: 0 5px;
-	background: #eee url('img/sprite-title.png') 0 0 no-repeat;
+	background: #eee url('img/sprite-title.png') no-repeat 0 0;
 	background-size: cover;
 	background-origin: content-box;
 	z-index: 1;
@@ -225,7 +225,7 @@ body {
 	left: 0;
 	width: 25px;
 	height: 25px;
-	background: url('img/sprite-skills.png') 0 0 no-repeat / 100%;
+	background: url('img/sprite-skills.png') no-repeat 0 0 / 100%;
 }
 
 .css::before {
