@@ -11,25 +11,52 @@
 </head>
 
 <body>
-	<section class="home" id="#home">
+	<div class="preloader"></div>
+	<section class="home" id="home">
+
 		<header class="header p-l p-r">
-			<div class="logo yellow">IC "Repair Design Project"</div>
-			<nav>
-				<ul class="main-menu">
+			<div class="header__logo yellow">IC "Repair Design Project"</div>
+			<nav class="main-menu">
+				<button class="main-menu__burger-btn burger-btn">
+					<span class="burger-btn__line"></span>
+				</button>
+				<ul class="main-menu__list">
 					<li class="main-menu__item"><a href="#home" class="main-menu__link">Home</a></li>
 					<li class="main-menu__item"><a href="#projects" class="main-menu__link">Projects</a></li>
 					<li class="main-menu__item"><a href="#measurement" class="main-menu__link">Measurement</a></li>
 					<li class="main-menu__item"><a href="#team" class="main-menu__link">Team</a></li>
 					<li class="main-menu__item"><a href="#reviews" class="main-menu__link">Reviews</a></li>
 					<li class="main-menu__item"><a href="#contacts" class="main-menu__link">Contacts</a></li>
+					<li class="main-menu__item"><a href="#popup" class="main-menu__link main-menu__request">Request a call</a></li>
 				</ul>
 			</nav>
-			<div class="request-call">
-				<a href="tel:+79991112233" class="request-call__phone yellow">+7 (999) 111-22-33</a>
-				<button class="button request-call__button">Request a call
-				</button>
+			<div class="header__request-call">
+				<a href="tel:+79991112233" class="header__phone yellow">+7 (999) 111-22-33</a>
+				<a href="#popup" class="button header__request-button">Request a call
+				</a>
+				<form class="call-measurer__call-form call-form mfp-hide" id="popup">
+					<h4 class="call-form__title">Leave a request for free	departure of the measurer</h4>
+					<div class="call-form__input-wrap input-wrap">
+						<input type="text" class="call-form__input input" placeholder=" ">
+						<div class="input__placeholder">What is your name:</div>
+					</div>
+					<div class="call-form__input-wrap input-wrap">
+						<input type="text" class="call-form__input input"  placeholder=" ">
+						<div class="input__placeholder">Your phone number:</div>
+					</div>
+					<div class="call-form__input-wrap input-wrap">
+						<input type="text" class="call-form__input input" placeholder=" ">
+						<div class="input__placeholder">Your email:</div>
+					</div>
+					<label class="call-form__checkbox checkbox">
+						<input type="checkbox" class="checkbox__input" checked>
+						<span class="checkbox__text">I agree to the processing of personal data</span>
+					</label>
+					<button class="call-form__button button">Call the measurer</button>
+				</form>
 			</div>
 		</header>
+		
 		<div class="home__content m-l">
 			<h1 class="home__title">Turnkey Repair in the city of <span class="yellow">Rostov-on-Don</span></h1>
 			<p class="home__text">
@@ -45,47 +72,89 @@
 	</section>
 
 	<section class="projects m-l" id="projects">
-		<div class="projects__title-block">
-			<h2 class="projects__title yellow">Completed projects</h2>
-			<p class="projects__text">Only a small part of the work performed by our company is presented on the site. For 14 years on in the construction 
-				market we have made happy more than 1000 families</p>
-		</div>
-		<div class="projects__slider slider">
-			<ul class="slider__data-list">
-				<li class="slider__data-item">
-					<h4 class="slider__data-name yellow">City:</h4>
-					<p class="slider__data-value">Rostov-on-Don<br>LCD admiral</p>
-				</li>
-				<li class="slider__data-item">
-					<h4 class="slider__data-name yellow">Apartment area:</h4>
-					<p class="slider__data-value">81 m<sup>2</sup></p>
-				</li>
-				<li class="slider__data-item">
-					<h4 class="slider__data-name yellow">Repair time:</h4>
-					<p class="slider__data-value">3.5 months</p>
-				</li>
-				<li class="slider__data-item">
-					<h4 class="slider__data-name yellow">Repair Cost:</h4>
-					<p class="slider__data-value">Upon request</p>
-				</li>
-			</ul>
-			
-			<div class="slider__right-group">
-				<ul class="slider__city-list">
-					<li class="slider__city slider__city-active">Rostov-on-Don, Admiral</li>
-					<li class="slider__city">Sochi Thieves</li>
-					<li class="slider__city">Rostov-on-Don Patriotic</li>
-				</ul>
+		<div class="projects__content">
+			<div class="projects__title-block">
+				<h2 class="projects__title yellow">Completed projects</h2>
+				<p class="projects__text">Only a small part of the work performed by our company is presented on the site. For 14 years on in the construction 
+					market we have made happy more than 1000 families</p>
+			</div>
+			<div class="projects__slider slider">
+				<div class="slider__dots-list-wrap">
+					<span class="slider__dot">Rostov-on-Don, Admiral</span>
+					<span class="slider__dot">Sochi Thieves</span>
+					<span class="slider__dot">Rostov-on-Don Patriotic</span>
+				</div>
 
 				<div class="slider__wrap">
-					<button class="slider__button slider__prev-button"></button>
 					<ul class="slider__list">
-						<li class="slider__item"><img src="img/slider-1.jpg" alt="slider 1"></li>
-						<li class="slider__item"><img src="img/slider-2.jpg" alt="slider 2"></li>
+						<li class="slider__item"><img data-lazy="img/slider-1.jpg" alt="slider 1"></li>
+						<li class="slider__item"><img data-lazy="img/slider-2.jpg" alt="slider 2"></li>
+						<li class="slider__item"><img data-lazy="img/slider-3.jpg" alt="slider 3"></li>
 					</ul>
-					<button class="slider__button slider__next-button"></button>
 				</div>
 			</div>
+			<ul class="projects__slider-info slider-info">
+				<li class="slider-info__item">
+					<ul class="slider-info__list">
+						<li class="slider-info__inner-item">
+							<h4 class="slider-info__name yellow">City:</h4>
+							<p class="slider-info__value">Rostov-on-Don<br>LCD admiral</p>
+						</li>
+						<li class="slider-info__inner-item">
+							<h4 class="slider-info__name yellow">Apartment area:</h4>
+							<p class="slider-info__value">81 m<sup>2</sup></p>
+						</li>
+						<li class="slider-info__inner-item">
+							<h4 class="slider-info__name yellow">Repair time:</h4>
+							<p class="slider-info__value">3.5 months</p>
+						</li>
+						<li class="slider-info__inner-item">
+							<h4 class="slider-info__name yellow">Repair Cost:</h4>
+							<p class="slider-info__value">Upon request</p>
+						</li>
+					</ul>
+				</li>
+				<li class="slider-info__item">
+					<ul class="slider-info__list">
+						<li class="slider-info__inner-item">
+							<h4 class="slider-info__name yellow">City:</h4>
+							<p class="slider-info__value">Sochi Thieves</p>
+						</li>
+						<li class="slider-info__inner-item">
+							<h4 class="slider-info__name yellow">Apartment area:</h4>
+							<p class="slider-info__value">55 m<sup>2</sup></p>
+						</li>
+						<li class="slider-info__inner-item">
+							<h4 class="slider-info__name yellow">Repair time:</h4>
+							<p class="slider-info__value">2 months</p>
+						</li>
+						<li class="slider-info__inner-item">
+							<h4 class="slider-info__name yellow">Repair Cost:</h4>
+							<p class="slider-info__value">Upon request</p>
+						</li>
+					</ul>
+				</li>
+				<li class="slider-info__item">
+					<ul class="slider-info__list">
+						<li class="slider-info__inner-item">
+							<h4 class="slider-info__name yellow">City:</h4>
+							<p class="slider-info__value">Rostov-on-Don<br>Patriotic</p>
+						</li>
+						<li class="slider-info__inner-item">
+							<h4 class="slider-info__name yellow">Apartment area:</h4>
+							<p class="slider-info__value">47 m<sup>2</sup></p>
+						</li>
+						<li class="slider-info__inner-item">
+							<h4 class="slider-info__name yellow">Repair time:</h4>
+							<p class="slider-info__value">1.5 months</p>
+						</li>
+						<li class="slider-info__inner-item">
+							<h4 class="slider-info__name yellow">Repair Cost:</h4>
+							<p class="slider-info__value">Upon request</p>
+						</li>
+					</ul>
+				</li>
+			</ul>
 		</div>
 	</section>
 
@@ -98,8 +167,10 @@
 				</svg>
 			</div>
 		</div>
-		<div class="online-control__video">
-			<video class="online-control__player" poster="img/vldeo.jpg" src="https://www.youtube.com/watch?v=Y8Q9ptCXzL0"></video>
+		<div class="online-control__wrap-video">
+			<div class="online-control__video">
+				<iframe class="online-control__player" data-src="https://www.youtube.com/embed/F4XGsXj4z5s" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
 		</div>
 		<p class="online-control__text">
 			At each facility, a camera is installed that broadcasts the progress of work on the clock.
@@ -138,7 +209,7 @@
 			</div>
 		</div>
 		<ul class="cards">
-			<li class="cards__item">
+			<li class="cards__item" data-src="img/type-card-1.jpg">
 				<div class="cards__wrap">
 					<h4 class="cards__title">Redecorating</h4>
 					<ul class="cards__list">
@@ -153,7 +224,7 @@
 					<button class="cards__button button">from 900 rub / m<sup>2</sup></button>
 				</div>
 			</li>
-			<li class="cards__item">
+			<li class="cards__item" data-src="img/type-card-2.jpg">
 				<div class="cards__wrap">
 					<h4 class="cards__title">Designer Repair</h4>
 					<ul class="cards__list">
@@ -168,7 +239,7 @@
 					<button class="cards__button button">from 1800 rub / m<sup>2</sup></button>
 				</div>
 			</li>
-			<li class="cards__item">
+			<li class="cards__item" data-src="img/type-card-3.jpg">
 				<div class="cards__wrap">
 					<h4 class="cards__title">Overhaul</h4>
 					<ul class="cards__list">
@@ -187,7 +258,7 @@
 	</section>
 
 	<section class="call-measurer p-r">
-		<div class="call-measurer__left-column">
+		<div class="call-measurer__left-column" data-src="img/call-measurer-bg.jpg">
 			<ul class="call-measurer__point-list">
 				<li class="call-measurer__point" data-num="01">Our specialist will arrive for measurements per day<br>contact, or appoint a date convenient for you</li>
 				<li class="call-measurer__point" data-num="02">Free metering</li>
@@ -195,7 +266,7 @@
 				<li class="call-measurer__point" data-num="04">Get a cost estimate and<br>the timing of your future repairs</li>
 			</ul>
 		</div>
-		<div class="call-measurer__form-wrap">
+		<div class="call-measurer__form-wrap" id="measurement">
 			<form class="call-measurer__call-form call-form">
 				<h4 class="call-form__title">Leave a request for free	departure of the measurer</h4>
 				<div class="call-form__input-wrap input-wrap">
@@ -227,7 +298,7 @@
 		</div>
 	</section>
 
-	<section class="fantasies p-r p-l">
+	<section class="fantasies p-r p-l" data-src="img/fantasies-bg.jpg">
 		<div class="fantasies__left-column">
 			<h2 class="fantasies__title yellow">We realize your wildest fantasies</h2>
 			<ul class="fantasies__list">
@@ -246,12 +317,12 @@
 		</div>
 		<div class="fantasies__images">
 			<div class="fantasies__images-column">
-				<img src="img/fantasies-1.jpg" alt="americal classic design" class="fantasies__img">
-				<img src="img/fantasies-2.jpg" alt="americal classic design" class="fantasies__img">
+				<img data-src="img/fantasies-1.jpg" alt="americal classic design" class="fantasies__img">
+				<img data-src="img/fantasies-2.jpg" alt="americal classic design" class="fantasies__img">
 			</div>
 			<div class="fantasies__images-column">
-				<img src="img/fantasies-3.jpg" alt="americal classic design" class="fantasies__img">
-				<img src="img/fantasies-4.jpg" alt="americal classic design" class="fantasies__img">
+				<img data-src="img/fantasies-3.jpg" alt="americal classic design" class="fantasies__img">
+				<img data-src="img/fantasies-4.jpg" alt="americal classic design" class="fantasies__img">
 			</div>
 		</div>
 	</section>
@@ -270,7 +341,7 @@
 			</p>
 		</div>
 		<ul class="cards">
-			<li class="cards__item">
+			<li class="cards__item" data-src="img/type-card-1.jpg">
 				<div class="cards__wrap">
 					<h4 class="cards__title">Mini</h4>
 					<ul class="cards__list">
@@ -282,7 +353,7 @@
 					<button class="cards__button button">from 900 rub / m<sup>2</sup></button>
 				</div>
 			</li>
-			<li class="cards__item">
+			<li class="cards__item" data-src="img/type-card-2.jpg">
 				<div class="cards__wrap">
 					<h4 class="cards__title">Standard</h4>
 					<ul class="cards__list">
@@ -297,7 +368,7 @@
 					<button class="cards__button button">from 1800 rub / m<sup>2</sup></button>
 				</div>
 			</li>
-			<li class="cards__item">
+			<li class="cards__item" data-src="img/type-card-3.jpg">
 				<div class="cards__wrap">
 					<h4 class="cards__title">Full</h4>
 					<ul class="cards__list">
@@ -321,53 +392,98 @@
 	</section>
 
 	<section class="steps p-r p-l">
-		<div class="steps__left-column">
-			<p class="steps__how">How we are working</p>
-			<h2 class="steps__title yellow">6 steps to the goal</h2>
-			<div class="steps__description">
-				<h4 class="steps__name yellow">Departure for measurements premises</h4>
-				<div>
-					<p class="steps__text">After your call, we go to you to consult and measure the premises of your apartment. During our meeting, you can ask absolutely any number of questions. An appraiser-appraiser leaves to measure the room.</p>
-					<p class="steps__text">He will advise you on the issues of repair technology, apartment design, terms of repair of the apartment as a whole and its individual stages.</p>
+		<div class="steps__content">
+			<div class="steps__title-block">
+				<p class="steps__subtitle">How we are working</p>
+				<h2 class="steps__title yellow">6 steps to the goal</h2>
+			</div>
+
+			<div class="steps__slider steps-slider">
+				<div class="steps-slider__dots-list-wrap">
+					<div class="steps-slider__item">
+						<span class="steps-slider__num">01</span>
+						<p class="steps-slider__name">Departure to room measurements</p>
+					</div>
+					<div class="steps-slider__item">
+						<span class="steps-slider__num">02</span>
+						<p class="steps-slider__name">Compilation estimates</p>
+					</div>
+					<div class="steps-slider__item">
+						<span class="steps-slider__num">03</span>
+						<p class="steps-slider__name">Development project design</p>
+					</div>
+					<div class="steps-slider__item">
+						<span class="steps-slider__num">04</span>
+						<p class="steps-slider__name">Purchasing Supplies</p>
+					</div>
+					<div class="steps-slider__item">
+						<span class="steps-slider__num">05</span>
+						<p class="steps-slider__name">Repair finishing work</p>
+					</div>
+					<div class="steps-slider__item">
+						<span class="steps-slider__num">06</span>
+						<p class="steps-slider__name">Acceptance of work</p>
+					</div>
+				</div>
+
+				<div class="steps-slider__wrap">
+					<ul class="steps-slider__list">
+						<li class="steps-slider__item"><img data-lazy="img/slider2-1.jpg" alt="slider 1"></li>
+						<li class="steps-slider__item"><img data-lazy="img/slider2-2.jpg" alt="slider 2"></li>
+						<li class="steps-slider__item"><img data-lazy="img/slider2-3.jpg" alt="slider 3"></li>
+						<li class="steps-slider__item"><img data-lazy="img/slider2-4.jpg" alt="slider 1"></li>
+						<li class="steps-slider__item"><img data-lazy="img/slider2-5.jpg" alt="slider 2"></li>
+						<li class="steps-slider__item"><img data-lazy="img/slider2-6.jpg" alt="slider 3"></li>
+					</ul>
 				</div>
 			</div>
-		</div>
-		<div class="slider2">
-			<ul class="slider2__points">
-				<li class="slider2__item slider2__item-active">
-					<span class="slider2__num">01</span>
-					<p class="slider2__name">Departure to room measurements</p>
+
+			<ul class="steps-slider-info">
+				<li class="steps-slider-info__item">
+					<h4 class="steps-slider-info__name yellow">Departure for measurements premises</h4>
+					<div>
+						<p class="steps-slider-info__text">After your call, we go to you to consult and measure the premises of your apartment. During our meeting, you can ask absolutely any number of questions. An appraiser-appraiser leaves to measure the room.</p>
+						<p class="steps-slider-info__text">He will advise you on the issues of repair technology, apartment design, terms of repair of the apartment as a whole and its individual stages.</p>
+					</div>
 				</li>
-				<li class="slider2__item">
-					<span class="slider2__num">02</span>
-					<p class="slider2__name">Compilation estimates</p>
+				<li class="steps-slider-info__item">
+					<h4 class="steps-slider-info__name yellow">Compilation estimates</h4>
+					<div>
+						<p class="steps-slider-info__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas praesentium temporibus dolor odit facilis nemo eos illo id! Soluta officia eos facilis saepe corrupti velit pariatur ducimus vel obcaecati quas nemo tenetur laborum possimus dolorum officiis ullam voluptatem, deserunt totam!</p>
+					</div>
 				</li>
-				<li class="slider2__item">
-					<span class="slider2__num">03</span>
-					<p class="slider2__name">Development project design</p>
+				<li class="steps-slider-info__item">
+					<h4 class="steps-slider-info__name yellow">Development project design</h4>
+					<div>
+						<p class="steps-slider-info__text">After your call, we go to you to consult and measure the premises of your apartment. During our meeting, you can ask absolutely any number of questions. An appraiser-appraiser leaves to measure the room.</p>
+						<p class="steps-slider-info__text">He will advise you on the issues of repair technology, apartment design, terms of repair of the apartment as a whole and its individual stages.</p>
+					</div>
 				</li>
-			</ul>
-			<ul class="slider2__points">
-				<li class="slider2__item">
-					<span class="slider2__num">04</span>
-					<p class="slider2__name">Purchasing Supplies</p>
+				<li class="steps-slider-info__item">
+					<h4 class="steps-slider-info__name yellow">Purchasing Supplies</h4>
+					<div>
+						<p class="steps-slider-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo iusto reiciendis consectetur assumenda, doloribus quo accusamus neque quasi ut est.</p>
+					</div>
 				</li>
-				<li class="slider2__item">
-					<span class="slider2__num">05</span>
-					<p class="slider2__name">Repair finishing work</p>
+				<li class="steps-slider-info__item">
+					<h4 class="steps-slider-info__name yellow">Repair finishing work</h4>
+					<div>
+						<p class="steps-slider-info__text">After your call, we go to you to consult and measure the premises of your apartment. During our meeting, you can ask absolutely any number of questions. An appraiser-appraiser leaves to measure the room.</p>
+						<p class="steps-slider-info__text">He will advise you on the issues of repair technology, apartment design, terms of repair of the apartment as a whole and its individual stages.</p>
+					</div>
 				</li>
-				<li class="slider2__item">
-					<span class="slider2__num">06</span>
-					<p class="slider2__name">Acceptance of work</p>
+				<li class="steps-slider-info__item">
+					<h4 class="steps-slider-info__name yellow">Acceptance of work</h4>
+					<div>
+						<p class="steps-slider-info__text">After your call, we go to you to consult and measure the premises of your apartment. During our meeting, you can ask absolutely any number of questions. An appraiser-appraiser leaves to measure the room.</p>
+						<p class="steps-slider-info__text">He will advise you on the issues of repair technology, apartment design, terms of repair of the apartment as a whole and its individual stages.</p>
+					</div>
 				</li>
-			</ul>
-			<ul class="slider2__images">
-				<li class="slider2__img-item"><img src="img/slider2-1.jpg" alt="slider pic" class="slider2__img"></li>
 			</ul>
 		</div>
 	</section>
 
-	<section class="team p-l p-r">
+	<section class="team p-l p-r" id="team">
 		<div class="ico-title">
 			<h3 class="ico-title__name">Our team</h3>
 			<div class="ico-title__icon">
@@ -388,7 +504,7 @@
 						<use xlink:href="img/sprite.svg#idea"></use>
 					</svg>
 				</div>
-				<img src="img/team-1.jpg" alt="team person" class="person__photo">
+				<img alt="team person" class="person__photo" data-src="img/team-1.jpg">
 				<div class="person__data">
 					<h4 class="person__name">Dmitry Tulyakov</h4>
 					<p class="person__position">Project manager</p>
@@ -401,7 +517,7 @@
 						<use xlink:href="img/sprite.svg#designer"></use>
 					</svg>
 				</div>
-				<img src="img/team-2.jpg" alt="team person" class="person__photo">
+				<img alt="team person" class="person__photo" data-src="img/team-2.jpg">
 				<div class="person__data">
 					<h4 class="person__name">Larisa Kotlyarova</h4>
 					<p class="person__position">Designer</p>
@@ -414,7 +530,7 @@
 						<use xlink:href="img/sprite.svg#foreman"></use>
 					</svg>
 				</div>
-				<img src="img/team-3.jpg" alt="team person" class="person__photo">
+				<img alt="team person" class="person__photo" data-src="img/team-3.jpg">
 				<div class="person__data">
 					<h4 class="person__name">Alexey Efimov</h4>
 					<p class="person__position">Foreman</p>
@@ -427,7 +543,7 @@
 			We do not have laborers and guest workers, each employee carries out work corresponding to his specialty.</p>
 	</section>
 
-	<section class="clients p-l p-r">
+	<section class="clients p-l p-r" id="reviews">
 		<div class="ico-title">
 			<h3 class="ico-title__name">Our clients</h3>
 			<div class="ico-title__icon">
@@ -511,7 +627,7 @@
 		</ul>
 	</section>
 
-	<section class="contacts p-l p-r">
+	<section class="contacts p-l p-r" id="contacts" data-src="img/contacts-bg.jpg">
 		<form class="contacts__form-q call-form">
 			<div class="contacts__form-q-wrap">
 				<h4 class="contacts__form-q-title call-form__title">Have any questions?</h4>
@@ -554,39 +670,16 @@
 				</svg>
 			</a>
 		</div>
-		<div class="contacts__map">
-			<!-- <iframe src="https://yandex.ru/map-widget/v1/-/CGdVqXNH" width="100%" height="100%" allowfullscreen="true"></iframe> -->
-			<img src="img/ya-map.jpg" alt="yandex map" class="contacts__map-img">
+		<div class="contacts__map-wrap">
+			<iframe class="contacts__map" data-src="https://yandex.ru/map-widget/v1/-/CGdVqXNH" allowfullscreen="true"></iframe>
+			<!-- <img src="img/ya-map.jpg" alt="yandex map" class="contacts__map-img"> -->
 		</div>
 	</section>
-
-	<footer class="footer m-l m-r">
-		<div class="logo yellow">IC "Repair Design Project"</div>
-		<nav>
-			<ul class="main-menu">
-				<li class="main-menu__item"><a href="#home" class="main-menu__link">Home</a></li>
-				<li class="main-menu__item"><a href="#project" class="main-menu__link">Projects</a></li>
-				<li class="main-menu__item"><a href="#Measurement" class="main-menu__link">Measurement</a></li>
-				<li class="main-menu__item"><a href="#Team" class="main-menu__link">Team</a></li>
-				<li class="main-menu__item"><a href="#Reviews" class="main-menu__link">Reviews</a></li>
-				<li class="main-menu__item"><a href="#Contacts" class="main-menu__link">Contacts</a></li>
-			</ul>
-		</nav>
-		<div class="request-call">
-			<a href="tel:+79991112233" class="request-call__phone yellow">+7 (999) 111-22-33</a>
-			<button class="button request-call__button">Request a call
-			</button>
-		</div>
-	</footer>
 	
 	<a href="#" class="instagram-link yellow">Instagram</a>
-	<!-- <script src="js/all.min.js"></script> -->
+
+	<script src="js/libs.min.js"></script>
+	<script src="js/main.min.js"></script>
 </body>
 
 </html>
-
-<!-- Занимаюсь качественной, адаптивной вёрсткой сайтов и спольсзованием таких инструментов и технологий как gulp, sass, БЭМ, LazyLoad и т.д
-Эффективно использую JavaScript и его библиотеки для более лучшего взаимодействия пользователя с сайтом посредством написания новых 
-	или подключения уже готовых плагинов (слайдеров, валидаций форм, ajax-запросов и др)
-Так же могу реализовать серверную часть на языках PHP+SQL (регистрация, приём заявок, отправка эл. писем и многого другого)
-За разрешение опубликовать в моём портфолио ваш сайт + отзыв, могу реализовать проект практически даром! -->
