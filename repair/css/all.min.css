@@ -1092,9 +1092,9 @@ sup {
 .main-menu__list {
   position: relative;
   z-index: 2;
-  display: none;
   display: -webkit-box;
   display: flex;
+  max-height: 100%;
   -webkit-box-pack: justify;
   justify-content: space-between;
   background-color: #131313;
@@ -1251,6 +1251,12 @@ sup {
 @media screen and (max-width: 590px) {
   .home__content {
     padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .home__content {
+    background-image: url("../img/bg-home_mobile.jpg");
   }
 }
 
